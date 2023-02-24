@@ -8,7 +8,7 @@
 5) Reopen terminal 
 6) In terminal type => sudo apt-get install subversion
 7) In terminal type => npm install -g opspark
-## above tests only need to happen once/work session 
+above tests only need to happen once/work session 
 8) In terminal type => os test 
 9) Select bootcamp session
 10) Select project to test 
