@@ -120,7 +120,9 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+//create new string to concatenate two strings
+var concatString = stringOne + stringTwo;
+return concatString 
 
 
     // YOUR CODE ABOVE HERE //
