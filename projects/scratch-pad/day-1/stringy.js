@@ -65,10 +65,11 @@ return newString
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
 
-//return a new string that is the original string with all spaces replaced with dashes
-var newString = string.replace(" ","-");
-return newString
-
+//create a new string that is the oroginal string all lowercased
+var lowercaseString = string.toLowerCase(string)    
+//return a new string that is the lowercase string with all spaces replaced with dashes
+var dashcaseString = lowercaseString.replaceAll(' ', '-');
+return dashcaseString
     // YOUR CODE ABOVE HERE //
 }
 
