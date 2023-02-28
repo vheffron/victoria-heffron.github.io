@@ -21,7 +21,9 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
+   for (var = i; i >= 0; i--){
     
+   }
     
     
     

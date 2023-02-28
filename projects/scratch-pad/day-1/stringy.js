@@ -87,7 +87,11 @@ return dashcaseString
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+    if(string[0] === char){
+        return true
+    }else {
+        return false
+    }
     
 
     // YOUR CODE ABOVE HERE //
@@ -141,7 +145,7 @@ return concatString
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
+    
 
     // YOUR CODE ABOVE HERE //
 }
