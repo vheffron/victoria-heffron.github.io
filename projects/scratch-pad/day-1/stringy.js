@@ -87,7 +87,7 @@ return dashcaseString
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-    if(string[0] === char){
+    if(string[0].toLowerCase() === char.toLowerCase()){
         return true
     }else {
         return false
@@ -111,7 +111,12 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+    if(string[string.length-1].toLowerCase() === char.toLowerCase()){
+        return true
+    }else {
+        return false
+    }
+    
 
 
     // YOUR CODE ABOVE HERE //
