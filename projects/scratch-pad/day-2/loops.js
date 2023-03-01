@@ -44,8 +44,9 @@ function getObjectKeys(object) {
    var keysArray = []
     for (var key in object){
       keysArray.push(key)
-      return keysArray
+    
     }
+    return keysArray
   
   
   
@@ -63,7 +64,6 @@ function printObjectKeys(object) {
     //to log the value of each key to the console
     console.log(object[key])
   }
-
   // YOUR CODE ABOVE HERE //
 }
 
