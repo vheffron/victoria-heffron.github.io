@@ -34,8 +34,10 @@ function isObject(value) { // return true for this type of object: {a: 1, b: 2}
     
     // first check that its any type of object
     function isObject(value){
-        if (typeof value === 'object' && /not Date/ && /not array/ && /not null/)
+        if (typeof value === 'object' && value !== Date() && value !== Array && value !==null/){
         //return something
+        return true}
+        else {return false}
     }
     
     
