@@ -15,7 +15,7 @@
 function isArray(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    //look up method to determine if value is an array 
     
     
     // YOUR CODE ABOVE HERE //
@@ -29,10 +29,14 @@ function isArray(value) {
  * null, not an Array, not a Date - all of these will return 'object' if used 
  * with typeof.
  */
-function isObject(value) {
+function isObject(value) { // return true for this type of object: {a: 1, b: 2}
     // YOUR CODE BELOW HERE //
     
-    
+    // first check that its any type of object
+    function isObject(value){
+        if (typeof value === 'object' && /not Date/ && /not array/ && /not null/)
+        //return something
+    }
     
     
     // YOUR CODE ABOVE HERE //
