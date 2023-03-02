@@ -13,8 +13,14 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
+   var greaterThanFilter = function(value){
+    if (value > base){
+    return true
+    }
+    else {return false}
+   }
+
+    return greaterThanFilter
     
     
     // YOUR CODE ABOVE HERE //
@@ -27,7 +33,14 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
+    var lessThanFilter = function(value){
+        if (value < base){
+        return true
+        }
+        else {return false}
+       }
     
+        return lessThanFilter  
     
     
     
@@ -41,8 +54,13 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
+   var startsWithFilter = function(string){
+    if (string[0].toLowerCase() === startsWith.toLowerCase()){
+        return true
+    }
+    else {return false}
+   } 
+   return startsWithFilter 
     
     
     // YOUR CODE ABOVE HERE //
@@ -55,7 +73,13 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+    var endsWithFilter = function(string){
+        if (string[string.length-1].toLowerCase() === endsWith.toLowerCase()){
+            return true
+        }
+        else {return false}
+       } 
+       return endsWithFilter   
     
     
     
