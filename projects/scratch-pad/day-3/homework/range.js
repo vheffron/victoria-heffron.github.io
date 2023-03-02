@@ -24,6 +24,22 @@
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     
+    //create array to collect output
+    var rangeArray = []
+    if (start < end){
+        for (var i = start; i <= end; i++){
+            rangeArray.push(i)
+        }
+        return rangeArray
+    } 
+    if (start > end){
+        for (var j = start; j >= end; j--){
+            rangeArray.push(j)
+        }
+        return rangeArray
+
+
+    }
     
     
     
