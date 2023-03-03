@@ -22,7 +22,7 @@
  *      4. removeContact(contact): takes a contact object to be removed from 
  *         the contact-list.
  *      5. add a printAllContactNames() Function to your makeContactList() factory. The printAllContactNames() Function should 
- *         return a String formated with all the full-names of the separated 
+ *         return a String formatted with all the full-names of the separated 
  *         with a line-break, like so:
  *          
  *         myContacts.printAllContactNames(); // => Max Gaudin
@@ -33,24 +33,65 @@
  *          new-line character added after it!
  */
 
-// YOUR CODE GOES BELOW HERE //
+// YOUR CODE GOES BELOW HERE // //
 function makeContact(id, nameFirst, nameLast) {
-
-} 
+        return {
+          id: id,
+          nameFirst: nameFirst,
+          nameLast: nameLast
+    } 
+}
 
 
 function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }
+        },
+        //function addContact
+        addContact: function(contact) {
+        //takes contact object and adds it to the contact list 
+            contacts.push(contact);
+        },
+        findContact: function(fullName){
+            for (var i = 0; i < contacts.length; i++){
+                var contact = contacts[i]
+                if (fullName === contact.nameFirst + ' ' + contact.nameLast){
+                    return contact
+                } 
+            } 
+            return undefined
+        },
+        removeContact: function(contact){
+            var index = contacts.indexOf(contacts)
+            contacts.splice(index, 1)
+        },
+        printAllContactNames: function (){
+            for (var i = 0; i < contacts.length; i++){
+                var contact = contacts[i]
+                console.log (contact.nameFirst + ' ' + contact.nameLast) 
+            }
+        
     }
+}
+
+    
+
+    
+    
+
+    //function findContact takes a full-name String, like 'Max Gaudin', and returns the contact 
+    //object if found in the contacts-list, or, undefined if the fullName does not match any contacts in the list
+
+    //function removeContact
+
+    //function printAllContactNames prints all names first name + last name separated by line breaks
 }
 
 
