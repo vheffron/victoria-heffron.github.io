@@ -73,10 +73,15 @@ function makeContactList() {
             contacts.splice(index, 1)
         },
         printAllContactNames: function (){
+            var allNames = ''
             for (var i = 0; i < contacts.length; i++){
                 var contact = contacts[i]
-                console.log (contact.nameFirst + ' ' + contact.nameLast) 
+                 allNames += (contact.nameFirst + ' ' + contact.nameLast) 
+                 if (i < contacts.length - 1){
+                    allNames += '\n'
+                 }
             }
+            return allNames
         
     }
 }
