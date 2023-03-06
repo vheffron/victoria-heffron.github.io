@@ -81,9 +81,8 @@ console.log(animals.length)
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-//I chose an object as the data structure for the list of friends because the order of the friends does not matter
-
-var friends = {}
+//I chose an array as the data structure so that we can access the values through their indexes
+var friends = []
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
