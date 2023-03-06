@@ -61,15 +61,29 @@ console.log(animal)
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+//create array to contain all the animals 
+var animals = [];
+//push first animal to animals array
+animals.push(animal);
+console.log(animals)
+var duck = {species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'whoosh']}
+//push duck to animals array
+animals.push(duck)
+console.log(animals)
+//create 2 more animal objects with species, name, 2+ sounds
+var dog = {species: 'dog', name: 'Stella', noises: ['bark', 'arf']};
+var fish = {species: 'beta fish', name: 'Cleo', noises: ['glug', 'blub']};
+animals.push(dog, fish)
+console.log(animals);
+console.log(animals.length)
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+//I chose an object as the data structure for the list of friends because the order of the friends does not matter
 
-
+var friends = {}
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"

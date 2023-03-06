@@ -80,15 +80,15 @@ As we code, save and refresh the browser tab running Matchy. Your work will begi
 It's super important to give your brain and yourself a rest when you can! Grab a drink and have a think! For like 10 minutes, then, **BACK TO WORK!** :)
 
 ## Step 6 - A Collection of Animals
- 1. [ ] Create a variable named `animals` and assign it to an empty array.
- 2. [ ] `push` our `animal` that we created to `animals`. You should now see your first animal appear on your `index.html` page!
- 3. [ ] `console.log` `animals`. What does it look like?
- 4. [ ] Create a variable called `duck` and assign it to the data:
+ 1. [x ] Create a variable named `animals` and assign it to an empty array.
+ 2. [x ] `push` our `animal` that we created to `animals`. You should now see your first animal appear on your `index.html` page!
+ 3. [x ] `console.log` `animals`. What does it look like?
+ 4. [x ] Create a variable called `duck` and assign it to the data:
   - `{ species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] }`
- 5. [ ] `push` `duck` to `animals`
- 6. [ ] `console.log` `animals`. What does it look like?
- 7. [ ] Create two more animal objects each with a species, a name, and at least two sounds sounds and add each one of them to `animals.
- 8. [ ] `console.log` `animals`, and, `console.log` the length of `animals`. Is everything looking right?
+ 5. [x ] `push` `duck` to `animals`
+ 6. [x ] `console.log` `animals`. What does it look like?
+ 7. [ x] Create two more animal objects each with a species, a name, and at least two sounds sounds and add each one of them to `animals.
+ 8. [x ] `console.log` `animals`, and, `console.log` the length of `animals`. Is everything looking right?
 
 
 ## Step 7 - Making Friends
