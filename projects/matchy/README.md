@@ -45,10 +45,10 @@ As we code, save and refresh the browser tab running Matchy. Your work will begi
  4. [x] Using **bracket notation** give `animal` a **property** called `name` with a value of your animal`s name.
  5. [x] Using either notation, give `animal` a **property** called `noises` with a value of empty array.
  6. [x] Print your `animal` Object to the console by adding, `console.log(animal);`,
- 7. [ ] Save your work (command-s || ctrl-s), switch back to the browser tab with your website running, and refresh your page to see what `animal` looks like.
- 8. [ ] It should be something like: 
+ 7. [x] Save your work (command-s || ctrl-s), switch back to the browser tab with your website running, and refresh your page to see what `animal` looks like.
+ 8. [x} It should be something like: 
 ~~~JS
-{ species: 'duck', name: 'Jennifer', noises: [] }
+{ species: 'duck', name: 'Jennifer', noises: [x] }
 ~~~
 
 ## Step 2 - Array Creation
@@ -60,21 +60,21 @@ As we code, save and refresh the browser tab running Matchy. Your work will begi
  6. [x ] Add an element to `noises` using this function.
  7. [x ] Using **bracket syntax** again, add another element to the end of `noises`. Make sure that the way you do this step would work no matter how many elements `noises` had. In other words, don't hard code the position of the new element.
  8. [x ] `console.log` the length of `noises`
- 9. [ ] `console.log` the last element in `noises` again without hard coding the index.
- 10. [ ] `console.log` the whole array.
- 11. [ ] Does it look right?
+ 9. [x ] `console.log` the last element in `noises` again without hard coding the index.
+ 10. [x ] `console.log` the whole array.
+ 11. [ x] Does it look right?
  
 
 ## Step 3 - Combining Step 1 and 2
- 1. [ ] Using **bracket syntax**, assign the `noises` property on `animal` to our new `noises` array.
- 2. [ ] Using any syntax add another noise to the `noises` property on `animal`.
- 3. [ ] `console.log` `animal`.
- 4. [ ] Does it look right?
+ 1. [ x] Using **bracket syntax**, assign the `noises` property on `animal` to our new `noises` array.
+ 2. [x ] Using any syntax add another noise to the `noises` property on `animal`.
+ 3. [ x] `console.log` `animal`.
+ 4. [ x] Does it look right?
 
 
 ## Step 4 - Review
- 1. [ ] What are the different ways you can access properties on objects?
- 2. [ ] What are the different ways of accessing elements on  arrays?
+ 1. [x ] What are the different ways you can access properties on objects?
+ 2. [x ] What are the different ways of accessing elements on  arrays?
 
 ## Step 5 - Take a Break!
 It's super important to give your brain and yourself a rest when you can! Grab a drink and have a think! For like 10 minutes, then, **BACK TO WORK!** :)

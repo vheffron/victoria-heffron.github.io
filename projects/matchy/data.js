@@ -22,8 +22,8 @@ console.log(animal);
 //////////////////////////////////////////////////////////////////////
 var noises = [];
 noises[0] = 'squeak';
-noises.push = 'chatter';
-noises.unshift = 'hiss';
+noises.push('chatter');
+noises.unshift('hiss');
 noises[noises.length] = 'sneeze';
 console.log(noises.length);
 console.log(noises[noises.length]);
@@ -33,15 +33,19 @@ console.log(noises);
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
-
+animal['noises'] = noises
+animal.noises.push('click')
+console.log(animal)
 /* *******************************************************************
  * Step 4 - Review
  *
  * 1. What are the different ways you can access properties on objects?
  *
+ * Bracket notation or dot notation referring to keys and properties
+ * 
  * 2. What are the different ways of accessing elements on arrays?
  *
+ * Bracket notation referring to index number e.g. arrray[0]; methods like .push
  * *******************************************************************
  */
 
