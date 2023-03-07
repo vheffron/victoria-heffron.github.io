@@ -83,6 +83,24 @@ console.log(animals.length)
 
 //I chose an array as the data structure so that we can access the values through their indexes
 var friends = []
+
+function getRandom(){ 
+min = Math.ceil(0);
+max = Math.floor(animals.length);
+return Math.floor(Math.random() * (max - min) + min);
+
+}
+//Using a random index from this function that you just created, get a random animal`
+var randomAnimal = getRandom(animal)
+console.log(randomAnimal)
+//access name of randomAnimal 
+var randomName = animals[randomAnimal]['name']
+console.log(animals[randomAnimal]['name'])
+// add its `name` to `friends
+friends.push(randomName)
+console.log(friends)
+
+dog['friends'] = friends
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"

@@ -46,7 +46,7 @@ As we code, save and refresh the browser tab running Matchy. Your work will begi
  5. [x] Using either notation, give `animal` a **property** called `noises` with a value of empty array.
  6. [x] Print your `animal` Object to the console by adding, `console.log(animal);`,
  7. [x] Save your work (command-s || ctrl-s), switch back to the browser tab with your website running, and refresh your page to see what `animal` looks like.
- 8. [x} It should be something like: 
+ 8. [x] It should be something like: 
 ~~~JS
 { species: 'duck', name: 'Jennifer', noises: [x] }
 ~~~
@@ -98,10 +98,10 @@ Imagine that our website has a profile page for each animal. On this profile pag
  1. [x ] Choose a data structure for this **list** of friends.
  2. [ x] Write a comment in your code that explains why you chose this data structure.
  3. [ x] Create a variable called `friends` and assign it to the data structure that you chose.
- 4. [ ] Take a look at the documentation for `Math.random` here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
- 5. [ ] Write a function called `getRandom` that takes our `animals` array and returns  a random `index` of the input array, using `Math.random`
- 6. [ ] Using a random index from this function that you just created, get a random animal and add its `name` to `friends`.
- 7. [ ] `console.log` `friends`.
+ 4. [x ] Take a look at the documentation for `Math.random` here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+ 5. [x ] Write a function called `getRandom` that takes our `animals` array and returns  a random `index` of the input array, using `Math.random`
+ 6. [x ] Using a random index from this function that you just created, get a random animal and add its `name` to `friends`.
+ 7. [x ] `console.log` `friends`.
  8. [ ] Using **bracket notation**, add the `friends` list as a **property** also named `friends` on one of the animals in the `animals` array
  9. [ ] `console.log` your work.
  
