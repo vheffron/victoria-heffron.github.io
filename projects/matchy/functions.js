@@ -59,14 +59,12 @@ function remove(animals, name){
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function add(animals, animal){
-if (animal.name.length > 0 && animal.species.length > 0){; 
+function add(animals, animal){ 
 for (var i = 0; i < animals.length; i++){
-    if(animals[i].name !== animal.name)
-        animals.push[animal]
-    }
-    }
-}
+    if(animal.name.length > 0 && animal.species.length > 0 && animals[i].name !== animal.name){          
+        }      
+    } animals.push(animal)
+} 
 
 /**
  * You did it! You're all done with Matchy!
