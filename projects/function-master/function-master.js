@@ -2,20 +2,28 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-var valuesArray = []
+
 function objectValues(object) {
-    for (value in object){ 
-       valuesArray.push(object[value])
+    var valuesArray = []
+    for (key in object){ 
+       valuesArray.push(object[key])
     }
   return valuesArray
     
 } 
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
+    var keysArray = [] 
+    for (key in object){ 
+        keysArray.push(key)
+    } 
+    return keysArray.join(' ')
+   
 
 }
 
