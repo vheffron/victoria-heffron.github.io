@@ -98,6 +98,10 @@ return capitalizeWord(object.name) + " is a " + capitalizeWord(object.species)
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
+if (!object.noises || !object.noises.length){
+    return "there are no noises"
+}
+return object.noises.join(" ")
 
 }
 
