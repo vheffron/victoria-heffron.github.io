@@ -46,15 +46,22 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    if (Array.isArray(collection)){
+        return "array"
+    }
+    else if (typeof collection === 'object' && !(collection instanceof Date) && !Array.isArray(collection) && collection !==null){
+        return"object"   
 }
-
+}
 //////////////////////////////////////////////////////////////////////
 // Function 5 - Capitalize Word //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+    var capital = string[0].toUpperCase();
+    var sliced = string.slice(1);
+    return capital + sliced 
+  
 }
 
 //////////////////////////////////////////////////////////////////////
