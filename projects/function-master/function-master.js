@@ -144,10 +144,17 @@ for (var i = 0; i < object.friends.length; i++){
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function nonFriends(name, array) {
+function nonFriends(name, array){
+var nonFriendsArray = []
 for (var i = 0; i < array.length; i++){
-    if ()
+
+    if (array[i].friends.indexOf(name) === -1 && array[i].name !== name){
+        nonFriendsArray.push(array[i].name)
+    }
+    
 }
+ return nonFriendsArray
+    
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -155,7 +162,8 @@ for (var i = 0; i < array.length; i++){
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+object.key = value
+return object
 }
 
 //////////////////////////////////////////////////////////////////////
