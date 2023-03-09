@@ -69,7 +69,12 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+    var splitArray = string.split(" ");
+    var capitalizedArray = []
+    for (var i = 0; i < splitArray.length; i++){
+        capitalizedArray.push(capitalizeWord(splitArray[i]))
+    } 
+    return capitalizedArray.join(" ")
 }
 
 //////////////////////////////////////////////////////////////////////
