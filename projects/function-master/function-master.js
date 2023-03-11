@@ -162,7 +162,7 @@ for (var i = 0; i < array.length; i++){
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-object.key = value
+object[key] = value
 return object
 }
 
@@ -171,7 +171,13 @@ return object
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+for(var i = 0; i < array.length; i++){
+    //checking if array[i] exists as an object key
+    if(object[array[i]] !== undefined){
+        //then delete that property
+        delete object[array[i]]
+    }
+}
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -179,7 +185,14 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-
+var outputArray = []
+for (var i = 0; i < array.length; i++){
+    //only add things to the new list if they don't already exist in the new list
+    if(outputArray.indexOf(array[i]) === -1){
+        outputArray.push(array[i])
+    }
+}
+return outputArray 
 }
 
 //////////////////////////////////////////////////////////////////////
