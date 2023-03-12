@@ -24,7 +24,15 @@ function isEven(number) {
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
+function countChars(string, letter) {
+  var count = 0
+  for (var i = 0; i < string.length; i++){
+    if (string[i] === letter){
+      count += 1
+
+    }  
+
+  } return count
 
 }
 
