@@ -91,7 +91,7 @@ _.first = function(arrayP, numberP){
         return arrayP[0]
     } if (numberP < 0){
         return []
-    }
+    } 
     else {return arrayP.slice(0, numberP)
     }
 }
@@ -114,6 +114,19 @@ _.first = function(arrayP, numberP){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+_.last = function(arrayP, numberP){
+    if (!Array.isArray(arrayP)){
+        return []
+    } if (typeof numberP !== 'number'){
+        return arrayP[arrayP.length -1]
+    } if (numberP < 0){
+        return []
+    } if (numberP > arrayP.length){
+        return arrayP
+    }
+    else {return arrayP.slice(arrayP.length - numberP, arrayP.length)
+    }
+}
 
 /** _.indexOf
 * Arguments:
@@ -131,6 +144,13 @@ _.first = function(arrayP, numberP){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(array, value){
+for (var i = 0; i < array.length; i++){
+    if(array[i] === value){
+    return i
+} 
+} return -1
+}
 
 /** _.contains
 * Arguments:
