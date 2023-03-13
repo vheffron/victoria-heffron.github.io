@@ -167,7 +167,12 @@ for (var i = 0; i < array.length; i++){
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
-
+_.contains = function(array, value){
+ 
+    for(var i = 0; i < array.length; i++){
+         return (array[i] == value ? true : false)
+    }
+}
 /** _.each //array.forEach()
 * Arguments:
 *   1) A collection
@@ -182,7 +187,8 @@ for (var i = 0; i < array.length; i++){
 * Examples:
 *   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
 *      -> should log "a" "b" "c" to the console
-*/
+
+*///no return statement bc each statement just executes, doesn't return 
 
 _.each = function(collection, func){
     //determine whether collection is array
@@ -200,7 +206,7 @@ _.each = function(collection, func){
         func(collection[key], key, collection)
     }
 }
-//no return statement bc each statement just executes, doesn't return 
+
 
 
 
