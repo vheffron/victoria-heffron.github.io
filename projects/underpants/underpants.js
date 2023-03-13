@@ -146,6 +146,11 @@ _.each = function(collection, func){
         }
 
     }else //it's an object
+    //iterate thru object
+    for(let key in collection){
+        //invoke function 
+        func(collection[key], key, collection)
+    }
 }
 
 /** _.unique
