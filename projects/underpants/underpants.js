@@ -31,8 +31,8 @@ _.identity = function(value){
 * Objectives:
 *   1) Return the type of <value> as a string
 *       Types are one of:
-*          - "string"
-*          - "array"
+*          - "string" --type of
+*          - "array"  --is array 
 *          - "object"
 *          - "undefined"
 *          - "number"
@@ -45,8 +45,25 @@ _.identity = function(value){
 * _.typeOf([1,2,3]) -> "array"
 */
 
-_.typeOf = function(){
-
+_.typeOf = function(value){
+if (Array.isArray(value)){
+    // check for array and null first so that they don't confuse typeof object 
+    return 'array';
+} if (value === null){
+    return 'null';
+} if (value === undefined){
+    return 'undefined';
+} if (typeof value === 'number'){
+    return 'number'
+} if (value instanceof Function){
+    return 'function'; 
+} if (typeof value === 'object'){
+    return 'object';
+} if (typeof value === 'boolean'){
+    return 'boolean';
+} if (typeof value === 'string'){
+    return 'string'
+}
 }
 
 /** _.first
@@ -67,6 +84,17 @@ _.typeOf = function(){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = function(arrayP, numberP){
+    if (!Array.isArray(arrayP)){
+        return []
+    } if (typeof numberP !== 'number'){
+        return arrayP[0]
+    } if (numberP < 0){
+        return []
+    }
+    else {return arrayP.slice(0, numberP)
+    }
+}
 
 /** _.last
 * Arguments:
@@ -152,6 +180,9 @@ _.each = function(collection, func){
         func(collection[key], key, collection)
     }
 }
+//no return statement bc each statement just executes, doesn't return 
+
+
 
 /** _.unique
 * Arguments:
