@@ -323,28 +323,26 @@ _.each = function(collection, func){
 */
 
 _.every = function(collection, func){
-    let allItemsPass = true; //boolean flag variable
-    //determine if func did not receive value 
-    if (func === undefined){
+    //determine if func does not resolve to truthy value
+    if (!func){
         //determine if array 
         if (Array.isArray(collection)){
         //iterate
         for (let i = 0; i < collection.length; i++){
             //determine if current value is not truthy 
             if (!collection[i]){
-                allItemsPass = false
+                return false 
             }
           }
         }
-    
      } else { //else it's an object 
         for (let key in collection){
             if (collection[key]){
-                allItemsPass = false
+              return false;
             }
-        }
+         }
+    }
     } else {
-    //else it did 
         //determine if array 
        
         if (Array.isArray(collection)){
