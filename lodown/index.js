@@ -22,3 +22,12 @@ function each(collection, action) {
     }
 }
 module.exports.each = each;
+
+
+///INSTRUCTIONS 
+//copy in functions from underpands; change to function declaration style
+//module.exports.[functionname] = functionname
+/**
+ *  create documentation in style of above (three sentences or less for most) 
+ * add @ returns statement under @params
+ */

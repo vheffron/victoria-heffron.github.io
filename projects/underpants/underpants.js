@@ -168,10 +168,10 @@ for (var i = 0; i < array.length; i++){
 */
 
 _.contains = function(array, value){
- 
+    var bool = false;
     for(var i = 0; i < array.length; i++){
-         return (array[i] == value ? true : false)
-    }
+           bool = array[i] === value ? true : bool
+    } return bool  
 }
 /** _.each //array.forEach()
 * Arguments:
@@ -220,6 +220,15 @@ _.each = function(collection, func){
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function(array){
+    var newArray = [];
+    for (var i = 0; i < array.length; i++){
+       if(i === _.indexOf(array, array[i]))
+       {newArray.push(array[i])
+        }
+    } return newArray
+}
+
 
 /** _.filter
 * Arguments:
@@ -235,7 +244,17 @@ _.each = function(collection, func){
 *   _.filter([1,2,3,4,5], function(x){return x%2 === 0}) -> [2,4]
 * Extra Credit:
 *   use _.each in your implementation
+
 */
+
+_.filter = function(array, func){
+  var newArray
+    for (var i = 0; i < array.length; i++){
+       if (func(array[i], i, array) === true){
+            newArray.push(array[i])
+       }
+    } return newArray  
+    } 
 
 
 /** _.reject
@@ -388,7 +407,7 @@ _.every = function(collection, func){
 */
 
 
-/** _.reduce
+/** _.reduce  //SKIP -- ALEX WILL GO OVER IN CLASS 
 * Arguments:
 *   1) An array
 *   2) A function
