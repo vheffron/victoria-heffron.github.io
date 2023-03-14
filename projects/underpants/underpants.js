@@ -322,6 +322,53 @@ _.each = function(collection, func){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(collection, func){
+    let allItemsPass = true; //boolean flag variable
+    //determine if func did not receive value 
+    if (func === undefined){
+        //determine if array 
+        if (Array.isArray(collection)){
+        //iterate
+        for (let i = 0; i < collection.length; i++){
+            //determine if current value is not truthy 
+            if (!collection[i]){
+                allItemsPass = false
+            }
+          }
+        }
+    
+     } else { //else it's an object 
+        for (let key in collection){
+            if (collection[key]){
+                allItemsPass = false
+            }
+        }
+    } else {
+    //else it did 
+        //determine if array 
+       
+        if (Array.isArray(collection)){
+            for (let i = 0; i < collection.length; i++){
+            if(!func(collection[i]), i){
+
+                allItemsPass = false
+            }
+            
+            }
+          }  else{
+
+            for(let key in collection){
+                if(func(collection[kru], key, collection)){
+                    allItemsPass = false 
+                }
+            }
+          }
+        } 
+           return allItemsPass 
+        }
+         
+        //else its an object 
+
 
 /** _.some
 * Arguments:
