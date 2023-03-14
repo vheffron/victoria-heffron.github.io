@@ -334,10 +334,9 @@ _.every = function(collection, func){
                 return false 
             }
           }
-        }
-     } else { //else it's an object 
+        } else { //else it's an object 
         for (let key in collection){
-            if (collection[key]){
+            if (!collection[key]){
               return false;
             }
          }
@@ -348,21 +347,20 @@ _.every = function(collection, func){
         if (Array.isArray(collection)){
             for (let i = 0; i < collection.length; i++){
             if(!func(collection[i]), i){
-
-                allItemsPass = false
+                return false
             }
             
             }
           }  else{
 
             for(let key in collection){
-                if(func(collection[kru], key, collection)){
-                    allItemsPass = false 
+                if(func(collection[key], key, collection)){
+                    return false
                 }
             }
           }
         } 
-           return allItemsPass 
+        return true 
         }
          
         //else its an object 
