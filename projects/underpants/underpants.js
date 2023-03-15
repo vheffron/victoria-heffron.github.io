@@ -437,6 +437,28 @@ _.every = function (collection, func) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function(array, func, seed){
+    //create result variable
+    let result = []
+    //determine if seed is undefined
+    if(seed === undefined){ //can't use !seed because 0 is a common seed value 
+        result = array[0]
+        for (var i = 1; i < array.length; i++){
+            //reassign result to invoking function on result, current item, current index, and array 
+            result = func(result, array[i], i, array);
+            }
+
+    //else seed is defined
+    }else {
+        result = seed
+        for (var i = 0; i < array.length; i++){
+            result = func(result, array[i], i, array)
+        }
+    } return result
+
+} 
+
+
 
 /** _.extend
 * Arguments:
