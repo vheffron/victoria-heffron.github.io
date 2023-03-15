@@ -3,6 +3,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
+
 var _ = {};
 
 
@@ -334,6 +335,14 @@ _.partition = function (array, func) {
 */
 
 _.map = function (collection, func) {
+    var newArray = []
+    if (Array.isArray(collection)) {
+        for (var i = 0; i < collection.length; i++) {
+            newArray.push(func(collection[i], i, collection))
+        }
+    } else for (var key in collection) {
+        newArray.push(func(collection[key], key, collection))
+    } return newArray
 }
 
 /** _.pluck
