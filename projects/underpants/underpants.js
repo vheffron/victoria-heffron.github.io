@@ -356,6 +356,9 @@ _.map = function (collection, func) {
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.pluck = function (array, property) {
+
+}
 
 /** _.every
 * Arguments:
@@ -396,10 +399,9 @@ _.every = function (collection, func) {
                     return false;
                 }
             }
-        }
-    } else {
+        } return true
+    } else {//else func is defined 
         //determine if array 
-
         if (Array.isArray(collection)) {
             for (let i = 0; i < collection.length; i++) {
                 if (!func(collection[i]), i) {
@@ -408,16 +410,15 @@ _.every = function (collection, func) {
 
             }
         } else {
-
             for (let key in collection) {
                 if (func(collection[key], key, collection)) {
                     return false
                 }
             }
         }
-    }
-    return true
-}
+    } return true
+} 
+
 
 //else its an object 
 
