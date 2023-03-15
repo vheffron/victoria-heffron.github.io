@@ -357,6 +357,7 @@ _.map = function (collection, func) {
 */
 
 _.pluck = function (array, property) {
+    
 
 }
 
