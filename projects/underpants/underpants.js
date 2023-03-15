@@ -20,7 +20,7 @@ var _ = {};
 *   _.identity(5) === 5
 *   _.identity({a: "b"}) === {a: "b"}
 */
-_.identity = function(value){
+_.identity = function (value) {
     return value;
 
 }
@@ -45,25 +45,25 @@ _.identity = function(value){
 * _.typeOf([1,2,3]) -> "array"
 */
 
-_.typeOf = function(value){
-if (Array.isArray(value)){
-    // check for array and null first so that they don't confuse typeof object 
-    return 'array';
-} if (value === null){
-    return 'null';
-} if (value === undefined){
-    return 'undefined';
-} if (typeof value === 'number'){
-    return 'number'
-} if (value instanceof Function){
-    return 'function'; 
-} if (typeof value === 'object'){
-    return 'object';
-} if (typeof value === 'boolean'){
-    return 'boolean';
-} if (typeof value === 'string'){
-    return 'string'
-}
+_.typeOf = function (value) {
+    if (Array.isArray(value)) {
+        // check for array and null first so that they don't confuse typeof object 
+        return 'array';
+    } if (value === null) {
+        return 'null';
+    } if (value === undefined) {
+        return 'undefined';
+    } if (typeof value === 'number') {
+        return 'number'
+    } if (value instanceof Function) {
+        return 'function';
+    } if (typeof value === 'object') {
+        return 'object';
+    } if (typeof value === 'boolean') {
+        return 'boolean';
+    } if (typeof value === 'string') {
+        return 'string'
+    }
 }
 
 /** _.first
@@ -84,15 +84,16 @@ if (Array.isArray(value)){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
-_.first = function(arrayP, numberP){
-    if (!Array.isArray(arrayP)){
+_.first = function (arrayP, numberP) {
+    if (!Array.isArray(arrayP)) {
         return []
-    } if (typeof numberP !== 'number'){
+    } if (typeof numberP !== 'number') {
         return arrayP[0]
-    } if (numberP < 0){
+    } if (numberP < 0) {
         return []
-    } 
-    else {return arrayP.slice(0, numberP)
+    }
+    else {
+        return arrayP.slice(0, numberP)
     }
 }
 
@@ -114,17 +115,18 @@ _.first = function(arrayP, numberP){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
-_.last = function(arrayP, numberP){
-    if (!Array.isArray(arrayP)){
+_.last = function (arrayP, numberP) {
+    if (!Array.isArray(arrayP)) {
         return []
-    } if (typeof numberP !== 'number'){
-        return arrayP[arrayP.length -1]
-    } if (numberP < 0){
+    } if (typeof numberP !== 'number') {
+        return arrayP[arrayP.length - 1]
+    } if (numberP < 0) {
         return []
-    } if (numberP > arrayP.length){
+    } if (numberP > arrayP.length) {
         return arrayP
     }
-    else {return arrayP.slice(arrayP.length - numberP, arrayP.length)
+    else {
+        return arrayP.slice(arrayP.length - numberP, arrayP.length)
     }
 }
 
@@ -144,12 +146,12 @@ _.last = function(arrayP, numberP){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
-_.indexOf = function(array, value){
-for (var i = 0; i < array.length; i++){
-    if(array[i] === value){
-    return i
-} 
-} return -1
+_.indexOf = function (array, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === value) {
+            return i
+        }
+    } return -1
 }
 
 /** _.contains
@@ -167,11 +169,11 @@ for (var i = 0; i < array.length; i++){
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
-_.contains = function(array, value){
+_.contains = function (array, value) {
     var bool = false;
-    for(var i = 0; i < array.length; i++){
-           bool = array[i] === value ? true : bool
-    } return bool  
+    for (var i = 0; i < array.length; i++) {
+        bool = array[i] === value ? true : bool
+    } return bool
 }
 /** _.each //array.forEach()
 * Arguments:
@@ -190,21 +192,21 @@ _.contains = function(array, value){
 
 *///no return statement bc each statement just executes, doesn't return 
 
-_.each = function(collection, func){
+_.each = function (collection, func) {
     //determine whether collection is array
-    if(Array.isArray(collection)){
+    if (Array.isArray(collection)) {
         //iterate using for loop
-        for (let i = 0; i < collection.length; i++){
+        for (let i = 0; i < collection.length; i++) {
             //invoke function on the current element, current index, and collection itself
             func(collection[i], i, collection)
         }
 
-    }else //it's an object
-    //iterate thru object
-    for(let key in collection){
-        //invoke function 
-        func(collection[key], key, collection)
-    }
+    } else //it's an object
+        //iterate thru object
+        for (let key in collection) {
+            //invoke function 
+            func(collection[key], key, collection)
+        }
 }
 
 
@@ -220,11 +222,11 @@ _.each = function(collection, func){
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
-_.unique = function(array){
+_.unique = function (array) {
     var newArray = [];
-    for (var i = 0; i < array.length; i++){
-       if(i === _.indexOf(array, array[i]))
-       {newArray.push(array[i])
+    for (var i = 0; i < array.length; i++) {
+        if (i === _.indexOf(array, array[i])) {
+            newArray.push(array[i])
         }
     } return newArray
 }
@@ -247,14 +249,14 @@ _.unique = function(array){
 
 */
 
-_.filter = function(array, func){
-  var newArray
-    for (var i = 0; i < array.length; i++){
-       if (func(array[i], i, array) === true){
+_.filter = function (array, func) {
+    var newArray = []
+    for (var i = 0; i < array.length; i++) {
+        if (func(array[i], i, array) === true) {
             newArray.push(array[i])
-       }
-    } return newArray  
-    } 
+        }
+    } return newArray
+}
 
 
 /** _.reject
@@ -269,6 +271,15 @@ _.filter = function(array, func){
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
+
+_.reject = function (array, func) {
+    var newArray = []
+    for (var i = 0; i < array.length; i++) {
+        if (func(array[i], i, array) === false) {
+            newArray.push(array[i])
+        }
+    } return newArray
+}
 
 
 /** _.partition
@@ -341,48 +352,48 @@ _.filter = function(array, func){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-_.every = function(collection, func){
+_.every = function (collection, func) {
     //determine if func does not resolve to truthy value
-    if (!func){
+    if (!func) {
         //determine if array 
-        if (Array.isArray(collection)){
-        //iterate
-        for (let i = 0; i < collection.length; i++){
-            //determine if current value is not truthy 
-            if (!collection[i]){
-                return false 
-            }
-          }
-        } else { //else it's an object 
-        for (let key in collection){
-            if (!collection[key]){
-              return false;
-            }
-         }
-    }
-    } else {
-        //determine if array 
-       
-        if (Array.isArray(collection)){
-            for (let i = 0; i < collection.length; i++){
-            if(!func(collection[i]), i){
-                return false
-            }
-            
-            }
-          }  else{
-
-            for(let key in collection){
-                if(func(collection[key], key, collection)){
+        if (Array.isArray(collection)) {
+            //iterate
+            for (let i = 0; i < collection.length; i++) {
+                //determine if current value is not truthy 
+                if (!collection[i]) {
                     return false
                 }
             }
-          }
-        } 
-        return true 
+        } else { //else it's an object 
+            for (let key in collection) {
+                if (!collection[key]) {
+                    return false;
+                }
+            }
         }
-         
-        //else its an object 
+    } else {
+        //determine if array 
+
+        if (Array.isArray(collection)) {
+            for (let i = 0; i < collection.length; i++) {
+                if (!func(collection[i]), i) {
+                    return false
+                }
+
+            }
+        } else {
+
+            for (let key in collection) {
+                if (func(collection[key], key, collection)) {
+                    return false
+                }
+            }
+        }
+    }
+    return true
+}
+
+//else its an object 
 
 
 /** _.some
@@ -446,8 +457,8 @@ _.every = function(collection, func){
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-if((typeof process !== 'undefined') &&
-   (typeof process.versions.node !== 'undefined')) {
+if ((typeof process !== 'undefined') &&
+    (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports = _;
 }
