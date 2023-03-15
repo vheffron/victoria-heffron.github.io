@@ -301,6 +301,21 @@ _.reject = function (array, func) {
 }
 */
 
+_.partition = function (array, func) {
+    var newArray1 = [];
+    var newArray2 = [];
+    var returnArray = []
+    for (var i = 0; i < array.length; i++) {
+        if (func(array[i], i, array) === true) {
+            newArray1.push(array[i])
+        } else {
+            newArray2.push(array[i])
+        }
+    } returnArray.push(newArray1, newArray2)
+    return returnArray
+}
+
+
 
 /** _.map
 * Arguments:
@@ -318,6 +333,8 @@ _.reject = function (array, func) {
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function (collection, func) {
+}
 
 /** _.pluck
 * Arguments:
@@ -437,26 +454,26 @@ _.every = function (collection, func) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
-_.reduce = function(array, func, seed){
+_.reduce = function (array, func, seed) {
     //create result variable
     let result = []
     //determine if seed is undefined
-    if(seed === undefined){ //can't use !seed because 0 is a common seed value 
+    if (seed === undefined) { //can't use !seed because 0 is a common seed value 
         result = array[0]
-        for (var i = 1; i < array.length; i++){
+        for (var i = 1; i < array.length; i++) {
             //reassign result to invoking function on result, current item, current index, and array 
             result = func(result, array[i], i, array);
-            }
+        }
 
-    //else seed is defined
-    }else {
+        //else seed is defined
+    } else {
         result = seed
-        for (var i = 0; i < array.length; i++){
+        for (var i = 0; i < array.length; i++) {
             result = func(result, array[i], i, array)
         }
     } return result
 
-} 
+}
 
 
 
