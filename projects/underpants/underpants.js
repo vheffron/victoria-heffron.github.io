@@ -391,15 +391,15 @@ _.every = function (collection, func) {
                 //determine if current value is not truthy 
                 if (!collection[i]) {
                     return false
-                }
-            }
+                } 
+            } return true 
         } else { //else it's an object 
             for (let key in collection) {
                 if (!collection[key]) {
                     return false;
                 }
-            }
-        } return true
+            } return true
+        } 
     } else {//else func is defined 
         //determine if array 
         if (Array.isArray(collection)) {
@@ -408,16 +408,16 @@ _.every = function (collection, func) {
                     return false
                 }
 
-            }
+            } return true 
         } else {
             for (let key in collection) {
-                if (func(collection[key], key, collection)) {
+                if (!func(collection[key], key, collection)) {
                     return false
                 }
-            }
-        }
-    } return true
-} 
+            } return true 
+        } 
+    } 
+}
 
 
 //else its an object 
