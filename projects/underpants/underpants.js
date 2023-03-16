@@ -546,6 +546,15 @@ _.reduce = function (array, func, seed) {
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
+_.extend = function () {
+    var objectOne = arguments[0]
+    for (var i = 1; i < arguments.length; i++) {
+        for (var key in arguments[i]) {
+            objectOne[key] = arguments[i][key]
+        }
+    } return objectOne
+}
+
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
