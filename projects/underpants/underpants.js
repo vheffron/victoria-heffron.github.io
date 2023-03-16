@@ -356,10 +356,14 @@ _.map = function (collection, func) {
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
-_.pluck = function (array, property) {
-    
+_.pluck = function (array, key) {
+    return _.map(array, function (n) {
+        return n[key]
+    })
+
 
 }
+
 
 /** _.every
 * Arguments:
@@ -392,32 +396,32 @@ _.every = function (collection, func) {
                 //determine if current value is not truthy 
                 if (!collection[i]) {
                     return false
-                } 
+                }
             }
         } else { //else it's an object 
             for (let key in collection) {
                 if (!collection[key]) {
                     return false;
                 }
-            } 
-        } 
+            }
+        }
     } else {//else func is defined 
         //determine if array 
         if (Array.isArray(collection)) {
             for (let i = 0; i < collection.length; i++) {
-                if (!func(collection[i]), i) {
+                if (!func(collection[i], i)) {
                     return false
                 }
 
-            } 
+            }
         } else {
             for (let key in collection) {
                 if (!func(collection[key], key, collection)) {
                     return false
                 }
-            } 
-        } 
-    } return true 
+            }
+        }
+    } return true
 }
 
 
