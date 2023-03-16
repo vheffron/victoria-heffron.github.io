@@ -449,6 +449,45 @@ _.every = function (collection, func) {
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+_.some = function (collection, func) {
+    //determine if func does not resolve to truthy value
+    if (func === undefined) {
+        //determine if array 
+        if (Array.isArray(collection)) {
+            //iterate
+            for (let i = 0; i < collection.length; i++) {
+                //determine if current value is not truthy 
+                if (collection[i]) {
+                    return true
+                }
+            }
+        } else { //else it's an object 
+            for (let key in collection) {
+                if (collection[key]) {
+                    return true;
+                }
+            }
+        }
+    } else {//else func is defined 
+        //determine if array 
+        if (Array.isArray(collection)) {
+            for (let i = 0; i < collection.length; i++) {
+                if (func(collection[i], i)) {
+                    return true
+                }
+
+            }
+        } else {
+            for (let key in collection) {
+                if (!func(collection[key], key, collection)) {
+                    return true
+                }
+            }
+        }
+    } return false
+}
+
+
 
 /** _.reduce  //SKIP -- ALEX WILL GO OVER IN CLASS 
 * Arguments:
