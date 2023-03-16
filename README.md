@@ -35,3 +35,6 @@ above tests only need to happen once/work session
 8) In terminal, type => os install
 9) Select bootcamp session
 10) Select project to install
+
+## How to CD back into correct workspace (when terminal just reads 'workspace')
+1. in terminal, type ==> cd victoria-heffron.github.io
