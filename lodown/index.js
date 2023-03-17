@@ -53,9 +53,10 @@ module.exports.typeOf = typeOf
 
 
 /** 
- * first: returns the first x number of values in a given array. If x (number) is not given, first returns the just the first value in the array.
+ * first: returns the first x number of values in a given array. If x (number) is not given, first returns
+ * just the first value in the array.
  * 
- * @param {array}: an array of which will return a subset  
+ * @param {array}: an array from which will return a subset  
  * @param {number}: the number of values that we will return from the array 
  * @return {array}: return an array of numbers that is a subset of the input array 
 */
@@ -74,22 +75,14 @@ function first(arrayP, numberP) {
 module.exports.first = first 
 
 
-/** _.last
-* Arguments:
-*   1) An array
-*   2) A number
-* Objectives:
-*   1) If <array> is not an array, return []
-*   2) If <number> is not given or not a number, return just the last element in <array>.
-*   3) Otherwise, return the last <number> items of <array>
-* Edge Cases:
-*   1) What if <number> is negative?
-*   2) What if <number> is greater than <array>.length?
-* Examples:
-*   _.last("ponies", 2) -> []
-*   _.last(["a", "b", "c"], "ponies") -> "c"
-*   _.last(["a", "b", "c"], 1) -> "c"
-*   _.last(["a", "b", "c"], 2) -> ["b", "c"]
+/** 
+ * last: last returns the last x number of values in a given array. If x (number) is not given, last returns
+ * just the last value in the array.
+ * 
+ * @param {array}: an array from which will return a subset  
+ * @param {number}: the number of values that we will return from the array 
+ * @return {array}: return an array of numbers that is a subset of the input array 
+
 */
 function last(arrayP, numberP) {
     if (!Array.isArray(arrayP)) {
@@ -108,20 +101,13 @@ function last(arrayP, numberP) {
 module.exports.last = last 
 
 
-/** _.indexOf
-* Arguments:
-*   1) An array
-*   2) A value
-* Objectives:
-*   1) Return the index of <array> that is the first occurrance of <value>
-*   2) Return -1 if <value> is not in <array>
-*   3) Do not use [].indexOf()!
-* Edge Cases:
-*   1) What if <array> has multiple occurances of val?
-*   2) What if <val> isn't in <array>?
-* Examples:
-*   _.indexOf(["a","b","c"], "c") -> 2
-*   _.indexOf(["a","b","c"], "d") -> -1
+/** 
+ * indexOf
+ * @param {array}: an array to check for a given value
+ * @param {value}: a value to look for in the given array
+ * @return {number}: the index value where the given value first occurs; if it doesn't occur, the value 
+ * returned is -1 
+* 
 */
 function indexOf(array, value) {
     for (var i = 0; i < array.length; i++) {
@@ -131,6 +117,7 @@ function indexOf(array, value) {
     } return -1
 }
 module.exports.indexOf = indexOf
+
 
 /** _.contains
 * Arguments:
@@ -146,13 +133,15 @@ module.exports.indexOf = indexOf
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
-
  function contains(array, value) {
     var bool = false;
     for (var i = 0; i < array.length; i++) {
         bool = array[i] === value ? true : bool
     } return bool
 }
+module.exports.contains 
+
+
 /**
  * each: Designed to loop over a collection, Array or Object, and applies the 
  * action Function to each value in the collection.
