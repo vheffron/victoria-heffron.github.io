@@ -290,27 +290,13 @@ function pluck(array, key) {
 module.exports.pluck = pluck 
 
 
-/** _.every
-* Arguments:
-*   1) A collection
-*   2) A function
-* Objectives:
-*   1) Call <function> for every element of <collection> with the paramaters:
-*      if <collection> is an array:
-*          current element, it's index, <collection>
-*      if <collection> is an object:
-*          current value, current key, <collection>
-*   2) If the return value of calling <function> for every element is true, return true
-*   3) If even one of them returns false, return false
-*   4) If <function> is not provided, return true if every element is truthy, otherwise return false
-* Edge Cases:
-*   1) what if <function> doesn't return a boolean
-*   2) What if <function> is not given?
-* Examples:
-*   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
-*   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
+/**
+ * every: checks each element in a collection for truthiness or falsiness by calling a function on that element. Returns true if all
+ * values are true, otherwise returns false. 
+ * @param {collection}: an array or object, which is looped over to call a function on every element of the collection
+ * @param {function}: a function that is called on every element of the input array or object to determine whether that element is truthy or falsey.
+ * @return {boolean}: if a function is provided and every function call results in true, returns true. Otherwise, returns false. 
 */
-
 function every(collection, func) {
     //determine if func does not resolve to truthy value
     if (func === undefined) {
@@ -348,32 +334,16 @@ function every(collection, func) {
         }
     } return true
 }
+module.exports.every = every 
 
 
-//else its an object 
-
-
-/** _.some
-* Arguments:
-*   1) A collection
-*   2) A function
-* Objectives:
-*   1) Call <function> for every element of <collection> with the paramaters:
-*       if <collection> is an array:
-*        current element, it's index, <collection>
-*       if <collection> is an object:
-*        current value, current key, <collection>
-*   2) If the return value of calling <function> is true for at least one element, return true
-*   3) If it is false for all elements, return false
-*   4) If <function> is not provided return true if at least one element is truthy, otherwise return false
-* Edge Cases:
-*   1) what if <function> doesn't return a boolean
-*   2) What if <function> is not given?
-* Examples:
-*   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
-*   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
+/**
+ * some: checks each element in a collection for truthiness or falsiness by calling a function on that element. Returns true if any
+ * values are true, otherwise returns false. 
+ * @param {collection}: an array or object, which is looped over to call a function on every element of the collection
+ * @param {function}: a function that is called on every element of the input array or object to determine whether that element is truthy or falsey.
+ * @return {boolean}: if a function is provided and any function call results in true, returns true. Otherwise, returns false. 
 */
-
 function some(collection, func) {
     //determine if func does not resolve to truthy value
     if (func === undefined) {
@@ -411,10 +381,16 @@ function some(collection, func) {
         }
     } return false
 }
+module.exports.some = some 
 
 
-
-/** _.reduce  //SKIP -- ALEX WILL GO OVER IN CLASS 
+/**
+ * reduce: 
+ * @param {array}: 
+ * @param {function}: 
+ * @return {value}:  
+*/
+/** _.reduce  
 * Arguments:
 *   1) An array
 *   2) A function
@@ -451,11 +427,15 @@ function reduce(array, func, seed) {
             result = func(result, array[i], i, array)
         }
     } return result
-
 }
+module.exports.reduce = reduce 
 
 
-
+/**
+ * extend: 
+ * @param {object}: 
+ * @return {object}:  
+*/
 /** _.extend
 * Arguments:
 *   1) An Object
@@ -470,7 +450,6 @@ function reduce(array, func, seed) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
-
 function extend() {
     var objectOne = arguments[0]
     for (var i = 1; i < arguments.length; i++) {
@@ -479,6 +458,8 @@ function extend() {
         }
     } return objectOne
 }
+module.exports.extend = extend 
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
