@@ -50,17 +50,24 @@ var femaleCount = function (array) {
 var oldestCustomer = function (array) {
     let oldest = _.reduce(array, function (accumulator, current) {
     
-        if (current.age > seed) {
-            accumulator = current.name
+        if (current.age > accumulator.age) {
+         accumulator = current
         }
         return accumulator;
-    }, 0)
-    return oldest
+    }, {age: 0})
+    return oldest.name
 }
 
 ////
 var youngestCustomer = function(array){
-
+    let youngest = _.reduce(array, function (accumulator, current) {
+    
+        if (current.age < accumulator.age) {
+         accumulator = current
+        }
+        return accumulator;
+    }, {age: 1000})
+    return youngest.name
 };
 
 var averageBalance = function (){
