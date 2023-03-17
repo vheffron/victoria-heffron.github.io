@@ -12,7 +12,7 @@
 function identity(value) {
     return value;
 }
-module.exports.identity = identity
+module.exports.identity = identity;
 
 
 /** 
@@ -49,7 +49,7 @@ function typeOf(value) {
         return 'string'
     }
 }
-module.exports.typeOf = typeOf
+module.exports.typeOf = typeOf;
 
 
 /** 
@@ -72,7 +72,7 @@ function first(arrayP, numberP) {
         return arrayP.slice(0, numberP)
     }
 }
-module.exports.first = first 
+module.exports.first = first;
 
 
 /** 
@@ -98,11 +98,13 @@ function last(arrayP, numberP) {
         return arrayP.slice(arrayP.length - numberP, arrayP.length)
     }
 }
-module.exports.last = last 
+module.exports.last = last;
 
 
 /** 
- * indexOf
+ * indexOf: returns the index value of the first instance of a given value in a given array. If the value does not exist
+ * in the array, returns -1. 
+ *  
  * @param {array}: an array to check for a given value
  * @param {value}: a value to look for in the given array
  * @return {number}: the index value where the given value first occurs; if it doesn't occur, the value 
@@ -116,10 +118,15 @@ function indexOf(array, value) {
         }
     } return -1
 }
-module.exports.indexOf = indexOf
+module.exports.indexOf = indexOf;
 
 
-/** _.contains
+/**
+ * contains: checks an array for a value and returns a boolean that indicates whether the value exists in the array
+ * 
+ * @param {array}: an array that we will check for a given value 
+ * @param {value}: the value we will look for in a given array 
+ * @return {bool}: returns true if given value exists in given array; if the given value does not exist in the given array 
 * Arguments:
 *   1) An array
 *   2) A value
@@ -133,13 +140,13 @@ module.exports.indexOf = indexOf
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
- function contains(array, value) {
+function contains(array, value) {
     var bool = false;
     for (var i = 0; i < array.length; i++) {
         bool = array[i] === value ? true : bool
     } return bool
 }
-module.exports.contains 
+module.exports.contains;
 
 
 /**
@@ -164,16 +171,10 @@ function each(collection, action) {
 module.exports.each = each;
 
 
-/** _.unique
-* Arguments:
-*   1) An array
-* Objectives:
-*   1) Return a new array of all elements from <array> with duplicates removed
-*   2) Use _.indexOf() from above
-* Examples:
-*   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
+/**unique: takes an array and returns a new array that contains all the elements of the original array, but with any duplicates removed
+* @param {array}: an input array from which we will copy all unique values into a new array  
+* @return {array}: an array that contains all unique values of the input array, i.e. with duplicates removed
 */
-
 function unique(array) {
     var newArray = [];
     for (var i = 0; i < array.length; i++) {
@@ -182,25 +183,16 @@ function unique(array) {
         }
     } return newArray
 }
+module.exports.unique = unique;
 
 
-/** _.filter
-* Arguments:
-*   1) An array
-*   2) A function
-* Objectives:
-*   1) call <function> for each element in <array> passing the arguments:
-*      the element, it's index, <array>
-*   2) return a new array of elements for which calling <function> returned true
-* Edge Cases:
-*   1) What if <function> returns something other than true or false?
-* Examples:
-*   _.filter([1,2,3,4,5], function(x){return x%2 === 0}) -> [2,4]
-* Extra Credit:
-*   use _.each in your implementation
-
+/**
+* filter: designed to perform some function on an array and return an array that contains only the elements that caused
+the function to return true, i.e. only the elements that "passed" the test that the function tested for.
+ * @param {array}: an array of values that a function will test  
+ * @param {function}: a function that tests the values of the array and returns true or false 
+ * @return {array}: an array that contains all the values that returned true for the given function 
 */
-
 function filter(array, func) {
     var newArray = []
     for (var i = 0; i < array.length; i++) {
@@ -209,21 +201,16 @@ function filter(array, func) {
         }
     } return newArray
 }
+module.exports.filter = filter
 
 
-/** _.reject
-* Arguments:
-*   1) An array
-*   2) A function
-* Objectives:
-*   1) call <function> for each element in <array> passing the arguments:
-*      the element, it's index, <array>
-*   2) return a new array of elements for which calling <function> returned false
-*   3) This is the logical inverse if _.filter()
-* Examples:
-*   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
+/**
+* reject: designed to perform some function on an array and return an array that contains only the elements that caused
+the function to return false, i.e. only the elements that "failed" the test that the function tested for.
+ * @param {array}: an array of values that a function will test  
+ * @param {function}: a function that tests the values of the array and returns true or false 
+ * @return {array}: an array that contains all the values that returned false for the given function
 */
-
 function reject(array, func) {
     var newArray = []
     for (var i = 0; i < array.length; i++) {
@@ -232,6 +219,7 @@ function reject(array, func) {
         }
     } return newArray
 }
+module.exports.reject = reject
 
 
 /** _.partition
