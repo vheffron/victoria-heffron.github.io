@@ -385,30 +385,14 @@ module.exports.some = some
 
 
 /**
- * reduce: 
- * @param {array}: 
- * @param {function}: 
- * @return {value}:  
+ * reduce: calls a function for every element of an array sequentially in index order, passing in the return value from the calculation on the 
+ * preceding element. Ie., reduce remembers the output of the last function call and aggregates/accumulates the result from the preceding function
+ * call. Reduce returns the value that results after the function is called on each element.
+ * @param {array}: an array that some function will act on each value of 
+ * @param {function}: the function that will be called for each value of the array 
+ * @param {seed}: the initial value (optional)
+ * @return {value}: the single value returned after the function is called on all elements of the array
 */
-/** _.reduce  
-* Arguments:
-*   1) An array
-*   2) A function
-*   3) A seed
-* Objectives:
-*   1) Call <function> for every element in <collection> passing the arguments:
-*         previous result, element, index
-*   2) Use the return value of <function> as the "previous result"
-*      for the next iteration
-*   3) On the very first iteration, use <seed> as the "previous result"
-*   4) If no <seed> was given, use the first element/value of <collection> as <seed> and continue to the next element
-*   5) After the last iteration, return the return value of the final <function> call
-* Edge Cases:
-*   1) What if <seed> is not given?
-* Examples:
-*   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
-*/
-
 function reduce(array, func, seed) {
     //create result variable
     let result = []
@@ -419,7 +403,6 @@ function reduce(array, func, seed) {
             //reassign result to invoking function on result, current item, current index, and array 
             result = func(result, array[i], i, array);
         }
-
         //else seed is defined
     } else {
         result = seed
@@ -432,23 +415,11 @@ module.exports.reduce = reduce
 
 
 /**
- * extend: 
- * @param {object}: 
- * @return {object}:  
-*/
-/** _.extend
-* Arguments:
-*   1) An Object
-*   2) An Object
-*   ...Possibly more objects
-* Objectives:
-*   1) Copy properties from <object 2> to <object 1>
-*   2) If more objects are passed in, copy their properties to <object 1> as well, in the order they are passed in.
-*   3) Return the update <object 1>
-* Examples:
-*   var data = {a:"one"};
-*   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
-*   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
+ * extend: copies properties from one object to another object. If more than two objects are passed in, extend copies all subsequent objects' 
+ * properties to the first object 
+ * @param {objects}: at least two objects. The second object's properties are copied to the first object. Any additional objects' properties 
+ * are also copied to the first object. 
+ * @return {object}:  returns the first object with all subsequent object's properties copied to it. 
 */
 function extend() {
     var objectOne = arguments[0]
