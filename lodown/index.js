@@ -258,25 +258,10 @@ module.exports.partition = partition
 
 
 /**
- * map: 
- * @param {collection}: an array or object that the function will test 
- * @param {function}: a function that tests the values of the array and determines whether they are truthy or falsey 
- * @return {array}: an array comprised of two subarrays -- one that contains all the truthy values and one that contains all the falsey
-*/
-/** _.map
-* Arguments:
-*   1) A collection
-*   2) a function
-* Objectives:
-*   1) call <function> for each element in <collection> passing the arguments:
-*        if <collection> is an array:
-*            the element, it's index, <collection>
-*        if <collection> is an object:
-*            the value, it's key, <collection>
-*   2) save the return value of each <function> call in a new array
-*   3) return the new array
-* Examples:
-*   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
+ * map: returns an array comprised of the result of a function called on each of the original array values
+ * @param {collection}: an array or object that the function will act on  
+ * @param {function}: a function that acts on the values in the array or object 
+ * @return {array}: an array that contains the value of each function call 
 */
 function map(collection, func) {
     var newArray = []
@@ -288,25 +273,21 @@ function map(collection, func) {
         newArray.push(func(collection[key], key, collection))
     } return newArray
 }
+module.exports.map = map 
 
-/** _.pluck
-* Arguments:
-*   1) An array of objects
-*   2) A property
-* Objectives:
-*   1) Return an array containing the value of <property> for every element in <array>
-*   2) You must use _.map() in your implementation.
-* Examples:
-*   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
+
+/**
+ * pluck: returns an array that contains the values for the input property for each object in the array
+ * @param {array}: an array of objects 
+ * @param {property}: a property that the function looks for in each object in the input array 
+ * @return {array}: an array that contains the value of the input property for each object 
 */
-
 function pluck(array, key) {
     return _.map(array, function (n) {
         return n[key]
     })
-
-
 }
+module.exports.pluck = pluck 
 
 
 /** _.every
