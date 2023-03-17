@@ -216,7 +216,7 @@ module.exports.filter = filter
 
 
 /**
-* reject: designed to perform some function on an array and return an array that contains only the elements that caused
+* reject: performs some function on an array and return an array that contains only the elements that caused
 the function to return false, i.e. only the elements that "failed" the test that the function tested for.
  * @param {array}: an array of values that a function will test  
  * @param {function}: a function that tests the values of the array and returns true or false 
@@ -235,10 +235,11 @@ module.exports.reject = reject
 
 
 /**
- *  * partition: 
+ * partition: tests all the values of an array and splits them between two subarrays in a new array, one subarray with truthy values and one
+ * subarray with falsey values 
  * @param {array}: an array of values that a function will test  
  * @param {function}: a function that tests the values of the array and determines whether they are truthy or falsey 
- * @return {array}: an array comprised of two subarrays -- one that contains all the truthy values and one that contains all the falsey
+ * @return {array}: a new array comprised of two subarrays -- one that contains all the truthy values and one that contains all the falsey
 */
 function partition(array, func) {
     var newArray1 = [];
@@ -256,7 +257,12 @@ function partition(array, func) {
 module.exports.partition = partition 
 
 
-
+/**
+ * map: 
+ * @param {collection}: an array or object that the function will test 
+ * @param {function}: a function that tests the values of the array and determines whether they are truthy or falsey 
+ * @return {array}: an array comprised of two subarrays -- one that contains all the truthy values and one that contains all the falsey
+*/
 /** _.map
 * Arguments:
 *   1) A collection
