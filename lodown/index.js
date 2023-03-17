@@ -1,5 +1,7 @@
 'use strict';
 
+const { builtinModules } = require("module");
+
 
 //UNDERPANTS FUNCTION DOCUMENTATION
 
@@ -13,6 +15,7 @@ function identity(value) {
     return value;
 }
 module.exports.identity = identity;
+
 
 
 /** 
@@ -52,6 +55,7 @@ function typeOf(value) {
 module.exports.typeOf = typeOf;
 
 
+
 /** 
  * first: returns the first x number of values in a given array. If x (number) is not given, first returns
  * just the first value in the array.
@@ -73,6 +77,7 @@ function first(arrayP, numberP) {
     }
 }
 module.exports.first = first;
+
 
 
 /** 
@@ -101,6 +106,7 @@ function last(arrayP, numberP) {
 module.exports.last = last;
 
 
+
 /** 
  * indexOf: returns the index value of the first instance of a given value in a given array. If the value does not exist
  * in the array, returns -1. 
@@ -119,6 +125,7 @@ function indexOf(array, value) {
     } return -1
 }
 module.exports.indexOf = indexOf;
+
 
 
 /**
@@ -149,6 +156,7 @@ function contains(array, value) {
 module.exports.contains;
 
 
+
 /**
  * each: Designed to loop over a collection, Array or Object, and applies the 
  * action Function to each value in the collection.
@@ -171,6 +179,7 @@ function each(collection, action) {
 module.exports.each = each;
 
 
+
 /**unique: takes an array and returns a new array that contains all the elements of the original array, but with any duplicates removed
 * @param {array}: an input array from which we will copy all unique values into a new array  
 * @return {array}: an array that contains all unique values of the input array, i.e. with duplicates removed
@@ -184,6 +193,7 @@ function unique(array) {
     } return newArray
 }
 module.exports.unique = unique;
+
 
 
 /**
@@ -204,6 +214,7 @@ function filter(array, func) {
 module.exports.filter = filter
 
 
+
 /**
 * reject: designed to perform some function on an array and return an array that contains only the elements that caused
 the function to return false, i.e. only the elements that "failed" the test that the function tested for.
@@ -222,25 +233,13 @@ function reject(array, func) {
 module.exports.reject = reject
 
 
-/** _.partition
-* Arguments:
-*   1) An array
-*   2) A function
-* Objectives:
-*   1) Call <function> for each element in <array> passing it the arguments:
-*       element, key, <array>
-*   2) Return an array that is made up of 2 sub arrays:
-*       0) An array that contains all the values for which <function> returned something truthy
-*       1) An array that contains all the values for which <function> returned something falsy
-* Edge Cases:
-*   1) This is going to return an array of arrays.
-* Examples:
-*   _.partition([1,2,3,4,5], function(element,index,arr){
-*     return element % 2 === 0;
-*   }); -> [[2,4],[1,3,5]]
-}
-*/
 
+/**
+ *  * partition: 
+ * @param {array}: an array of values that a function will test  
+ * @param {function}: a function that tests the values of the array and determines whether they are truthy or falsey 
+ * @return {array}: an array comprised of two subarrays -- one that contains all the truthy values and one that contains all the falsey
+*/
 function partition(array, func) {
     var newArray1 = [];
     var newArray2 = [];
@@ -254,6 +253,7 @@ function partition(array, func) {
     } returnArray.push(newArray1, newArray2)
     return returnArray
 }
+module.exports.partition = partition 
 
 
 
@@ -272,7 +272,6 @@ function partition(array, func) {
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-
 function map(collection, func) {
     var newArray = []
     if (Array.isArray(collection)) {
