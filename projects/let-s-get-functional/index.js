@@ -49,48 +49,67 @@ var femaleCount = function (array) {
 /////
 var oldestCustomer = function (array) {
     let oldest = _.reduce(array, function (accumulator, current) {
-    
+
         if (current.age > accumulator.age) {
-         accumulator = current
+            accumulator = current
         }
         return accumulator;
-    }, {age: 0})
+    }, { age: 0 })
     return oldest.name
 }
 
 ////
-var youngestCustomer = function(array){
+var youngestCustomer = function (array) {
     let youngest = _.reduce(array, function (accumulator, current) {
-    
+
         if (current.age < accumulator.age) {
-         accumulator = current
+            accumulator = current
         }
         return accumulator;
-    }, {age: 1000})
+    }, { age: 1000 })
     return youngest.name
 };
 
-var averageBalance = function (){
+var averageBalance = function (array) {
+    //create array of all the customer balances
+    let balanceArrayStrings = _.pluck(array, 'balance')
+    //transform data from strings to numbers    
+    let balanceArray = _.map(balanceArrayStrings, function (balance) {
+        //replace $ and , with nothing to convert '$n,nnn' to 'nnnn'
+        var numberString = balance.replace('$', '').replace(',', '')
+        //convert string of numbers to number ie 'nnnn' to nnnn and return 
+        return parseFloat(numberString)
+
+    })
+    //add all the balances together
+    function add(accumulator, a) {
+        return accumulator + a;
+    }
+    const total = balanceArray.reduce(add, 0)
+    var average = total / array.length
+    console.log(average)
+    return average
 
 };
 
-var firstLetterCount = function(){
+
+var firstLetterCount = function () {
 
 };
 
-var friendFirstLetterCount = function(){
+var friendFirstLetterCount = function () {
 
 };
 
-var friendsCount = function(){
+var friendsCount = function () {
 
 };
 
-var topThreeTags = function(){
+var topThreeTags = function () {
 
 };
 
-var genderCount = function(){
+var genderCount = function () {
 
 };
 
