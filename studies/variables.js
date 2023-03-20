@@ -10,12 +10,10 @@
  * one of the three declarative keywords: var, let, or const. Once declared, you can then assign the variable a 
  * value.
  * 
- * 2. Var, let, and const: The three variable declaration keywords have various uses and benefits. Var, the original variable declaration
+ * 2: Var, let, and const: The three variable declaration keywords have various uses and benefits. Var, the original variable declaration
  * keyword, was the only option until ES6, when let and const were introduced to address some of var's limitations. Const is unique in
- * that it cannot be redeclared. Additionally, the three keywords vary in their behaviors with respect to scope and hoisting, discussed in
- * the next two items below. 
- * 
- * 3. Scope: Scope determines where variables are accessible. There are three different scopes: 
+ * that it cannot be redeclared. Additionally, the three keywords vary in their behaviors with respect to scope and hoisting, discussed below. 
+ *      Scope: Scope determines where variables are accessible. There are three different scopes: 
  *      -block scope (variable is accessible only in the current code block), 
  *      -function scope (variable is accessible only in the current function), and
  *      -global scope (variable is accessible everywhere)
@@ -26,7 +24,7 @@
  * scoped, so it can be accessed globally even when declared inside of a code block. 
  * 
  * 
- * 4. Hoisting: variable declarations are hoisted to the top of the code. Therefore, a variable can be declared "after" it is used. Variable 
+ * 3: Hoisting: variable declarations are hoisted to the top of the code. Therefore, a variable can be declared "after" it is used. Variable 
  * initializations are not hoisted. Let and const, however, cannot be used before they are declared. 
  * 
  */
@@ -42,7 +40,7 @@ let firstName = 'Victorai' //let is declared like var
 firstName = 'Victoria' //like var, a variable declared with let can be redefined 
 const lastName = 'Heffron' //const is also declared the same way, but unlike var and let, it cannot be redefined
 
-//3// Scope 
+//(Scope) 
 function fullName(){
     console.log(firstName + ' ' +lastName)//firstName and lastName were declared globally above, so they are available within this function 
 }
@@ -54,7 +52,7 @@ function fullNameTwo(){
 }
 //we cannot access firstNameTwo and lastNameTwo in another function, because they are function scoped inside of fullNameTwo
 
-//4// Hoisting 
+//3// Hoisting 
 console.log(varMessage)
 var varMessage = 'this will not print, but it will not throw an error either' //these two lines will result in "undefined" printing to the 
 //console. No error is thrown, because the declaration is "hoisted" above the console.log line, but the variable is not defined until after the console.log line.
