@@ -23,15 +23,17 @@ var factorial = function (n) {
 
 // 2. Compute the sum of an array of integers.
 // Example:  sum([1, 2, 3, 4, 5, 6]);  // 21
-var sum = function (array) {
-  if (array.length === 0) {
-    
-  }
-  if (array.slice(1)){
+var sum = function(array){
+  //base condition 
+  if (array.length === 0){
+    return 0
+  };
 
-  }
-} 
-return sum
+  //recursion 
+  return array[0] + sum(array.slice(1))
+}
+
+
 
 // 3. Sum all numbers in an array containing nested arrays.
 // Example: arraySum([1,[2,3],[[4]],5]); // 15
