@@ -10,6 +10,6 @@
  * 
  * 3: Loop over an array, forwards and backwards
  * 
- * 4: Loop over an obhect
+ * 4: Loop over an object
  * 
  */
