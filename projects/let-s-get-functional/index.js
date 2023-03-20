@@ -106,13 +106,23 @@ var firstLetterCount = function (array, letter) {
 
 
 
-var friendFirstLetterCount = function () {
+var friendFirstLetterCount = function (array, customerName, letter) {
 
-};
+    let customer = _.filter(array, function (c) {
+        return c.name === customerName})[0]; 
+
+
+  return firstLetterCount(customer.friends, letter)
+}
+
 
 var friendsCount = function () {
+    let friendsArray = []
+    let customer = _.filter(array, function (c) {
+        return c.name === customerName})[0]; 
+        
+}
 
-};
 
 var topThreeTags = function () {
 
