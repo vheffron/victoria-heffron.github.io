@@ -90,15 +90,18 @@ var sumBelow = function (n, isRecursive = false) {
 var range = function (x, y, isRecursive = false, rangeArray = []) {
 
   //base case
-  if (x + 1 === y || x - 1 === y) {
+  if (x === y){
     return rangeArray
   }
+    if (x + 1 === y || x - 1 === y) {
+      return rangeArray
+    }
 
   //recursion
   if (x > y) {
     if (!isRecursive) {
       rangeArray.push(x - 1);
-      return range(x - 1, y, true, rangeArray )
+      return range(x - 2, y, true, rangeArray)
     }
     rangeArray.push(x)
     return range(x - 1, y, true, rangeArray)
@@ -110,13 +113,14 @@ var range = function (x, y, isRecursive = false, rangeArray = []) {
   if (x < y) {
     if (!isRecursive) {
       rangeArray.push(x + 1);
-      return range (x + 1, y, true, rangeArray)
+      return range(x + 2, y, true, rangeArray)
     }
     rangeArray.push(x)
     return range(x + 1, y, true, rangeArray)
 
   }
-  return rangeArray}
+  return rangeArray
+}
 
 
 
