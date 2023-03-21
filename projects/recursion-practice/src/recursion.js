@@ -87,8 +87,7 @@ var sumBelow = function (n, isRecursive = false) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function (x, y, isRecursive = false) {
-  var rangeArray = []
+var range = function (x, y, isRecursive = false, rangeArray = []) {
   if (x + 1 === y || x -1 === y){
     return rangeArray 
   }
@@ -108,7 +107,7 @@ var range = function (x, y, isRecursive = false) {
       return rangeArray
     }
     if (!isRecursive){
-      
+
     }
     //recursion 
     //x + 1
