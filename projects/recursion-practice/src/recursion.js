@@ -87,8 +87,36 @@ var sumBelow = function (n, isRecursive = false) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function (x, y) {
-};
+var range = function (x, y, isRecursive = false) {
+  var rangeArray = []
+  if (x + 1 === y || x -1 === y){
+    return rangeArray 
+  }
+  if (x > y) {
+    if (x === y + 1){
+      return rangeArray
+    }
+    if (!isRecursive){
+
+    }
+    //recursion 
+   //x - 1
+    }
+  
+  if (x < y) {
+    if (y === x + 1){
+      return rangeArray
+    }
+    if (!isRecursive){
+      
+    }
+    //recursion 
+    //x + 1
+    
+    } 
+   
+    return rangeArray
+  }
 
 // 7. Compute the exponent of a number.
 // The exponent of a number says how many times the base number is used as a factor.
