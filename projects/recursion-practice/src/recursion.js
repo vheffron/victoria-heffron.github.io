@@ -71,52 +71,56 @@ var sumBelow = function (n, isRecursive = false) {
     return 0
   }
   if (n > 0) {
-    if (!isRecursive){
+    if (!isRecursive) {
       return sumBelow(n - 1, true)
     }
-      return n + sumBelow(n - 1, true)
+    return n + sumBelow(n - 1, true)
+  }
+  if (n < 0) {
+    if (!isRecursive) {
+      return sumBelow(n + 1, true)
     }
-    if (n < 0) {
-      if (!isRecursive){
-        return sumBelow(n + 1, true)
-      }
-        return n + sumBelow(n + 1, true)
-      }
-    }
+    return n + sumBelow(n + 1, true)
+  }
+}
 
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function (x, y, isRecursive = false, rangeArray = []) {
-  if (x + 1 === y || x - 1 === y){
-    return rangeArray 
-  }
-  if (x > y) {
-    if (x === y + 1){
-      return rangeArray
-    }
-    if (!isRecursive){
 
-    }
-
-    //recursion 
-   //x - 1?
-    }
-  
-  if (x < y) {
-    if (y === x + 1){
-      return rangeArray
-    }
-    if (!isRecursive){
-
-    }
-    //recursion 
-    //x + 1?
-    
-    } 
-   
+  //base case
+  if (x + 1 === y || x - 1 === y) {
     return rangeArray
   }
+
+  //recursion
+  if (x > y) {
+    if (!isRecursive) {
+      rangeArray.push(x - 1);
+      return range(x - 1, y, true, rangeArray )
+    }
+    rangeArray.push(x)
+    return range(x - 1, y, true, rangeArray)
+  }
+
+  //recursion 
+  //x - 1?
+
+  if (x < y) {
+    if (!isRecursive) {
+      rangeArray.push(x + 1);
+      return range (x + 1, y, true, rangeArray)
+    }
+    rangeArray.push(x)
+    return range(x + 1, y, true, rangeArray)
+
+  }
+  return rangeArray}
+
+
+
+
 
 // 7. Compute the exponent of a number.
 // The exponent of a number says how many times the base number is used as a factor.
@@ -153,11 +157,11 @@ var modulo = function (x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function (x, y) {
-if (y === 0){
-  return 0
-}
+  if (y === 0) {
+    return 0
+  }
 };
-multiply(2,4) // multiplying is equivalent to adding x to itself y times. 2 + 2 + 2 + 2  
+multiply(2, 4) // multiplying is equivalent to adding x to itself y times. 2 + 2 + 2 + 2  
 
 // 13. Write a function that divides two numbers without using the / operator  or
 // JavaScript's Math object.
