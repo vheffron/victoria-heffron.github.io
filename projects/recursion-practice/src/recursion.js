@@ -23,9 +23,10 @@ var factorial = function (n) {
 
 // 2. Compute the sum of an array of integers.
 // Example:  sum([1, 2, 3, 4, 5, 6]);  // 21
-var sum = function(array){
+var sum = function (array) {
   //base condition 
-  if (array.length === 0){
+
+  if (array.length === 0) {
     return 0
   };
 
@@ -42,38 +43,47 @@ var arraySum = function (array) {
 
 // 4. Check if a number is even.
 var isEven = function (n) {
-    if (n === 1) {
-          return false
-    }
-    if (n === 0) {
-      return true
-    }
-      if (n > 0){
-          return isEven(n-2)
-      }
-      if (n < 0){
-        return isEven(n+2)
-      } 
-      return false 
-    }
-  
-; 
+  if (n === 1) {
+    return false
+  }
+  if (n === 0) {
+    return true
+  }
+  if (n > 0) {
+    return isEven(n - 2)
+  }
+  if (n < 0) {
+    return isEven(n + 2)
+  }
+  return false
+}
+
+  ;
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
-var sumBelow = function (n) {
-  if (n === undefined){
+var sumBelow = function (n, isRecursive = false) {
+  if (n === undefined) {
     return null
   }
-  if (n < 0){
-    return sum(n)
-  }
-    if (n === 0){
+  if (n === 0) {
     return 0
   }
-  return n - 1 + sumBelow - 1
-};
+  if (n > 0) {
+    if (!isRecursive){
+      return sumBelow(n - 1, true)
+    }
+      return n + sumBelow(n - 1, true)
+    }
+    if (n < 0) {
+      if (!isRecursive){
+        return sumBelow(n + 1, true)
+      }
+        return n + sumBelow(n + 1, true)
+      }
+    }
+
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
