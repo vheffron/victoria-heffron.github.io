@@ -88,7 +88,7 @@ var sumBelow = function (n, isRecursive = false) {
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function (x, y, isRecursive = false, rangeArray = []) {
-  if (x + 1 === y || x -1 === y){
+  if (x + 1 === y || x - 1 === y){
     return rangeArray 
   }
   if (x > y) {
@@ -98,8 +98,9 @@ var range = function (x, y, isRecursive = false, rangeArray = []) {
     if (!isRecursive){
 
     }
+
     //recursion 
-   //x - 1
+   //x - 1?
     }
   
   if (x < y) {
@@ -110,7 +111,7 @@ var range = function (x, y, isRecursive = false, rangeArray = []) {
 
     }
     //recursion 
-    //x + 1
+    //x + 1?
     
     } 
    
@@ -132,7 +133,7 @@ var exponent = function (base, exp) {
 var powerOfTwo = function (n) {
 };
 
-// 9. Write a function that accepts a string a reverses it.
+// 9. Write a function that accepts a string and reverses it.
 var reverse = function (string) {
 };
 
@@ -152,7 +153,11 @@ var modulo = function (x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function (x, y) {
+if (y === 0){
+  return 0
+}
 };
+multiply(2,4) // multiplying is equivalent to adding x to itself y times. 2 + 2 + 2 + 2  
 
 // 13. Write a function that divides two numbers without using the / operator  or
 // JavaScript's Math object.
