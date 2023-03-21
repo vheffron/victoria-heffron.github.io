@@ -116,12 +116,22 @@ var friendFirstLetterCount = function (array, customerName, letter) {
 }
 
 
-var friendsCount = function () {
-    let friendsArray = []
-    let customer = _.filter(array, function (c) {
-        return c.name === customerName})[0]; 
+var friendsCount = function (array, name) { //output array of followers names 
+    var nameFollowers = _.filter(array, function(customer){
+        return _.some(customer.friends, function(friend){
+            return friend.name === name
+        })
+    })
+  return _.map(nameFollowers, function(nameFollower){
+    return nameFollower.name
+  })
         
 }
+
+const friendsCount2 = (array, name) => 
+    array
+        .filter((c) => c.friends.some(f => f.name === name))
+        .map((n => n.name));
 
 
 var topThreeTags = function () {
