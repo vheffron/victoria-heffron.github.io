@@ -87,40 +87,34 @@ var sumBelow = function (n, isRecursive = false) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function (x, y, rangeArray = []) {
+var range = function (x, y, isRecursive = false, rangeArray = []) {
 
   //base case
-
-  if (x === y){
+  if (x === y) {
     return rangeArray
   }
   if (x + 1 === y || x - 1 === y) {
     return rangeArray
   }
 
-
   //recursion
   if (x > y) {
-      let lastValue = x - 1
-      if (rangeArray.length){
-        lastValue = rangeArray[rangeArray.length - 1] - 1
-      }
-      if (lastValue === y){ 
-        return rangeArray
-      }
-      rangeArray.push(lastValue);
-      return range(x, y, rangeArray)
+    if (!isRecursive) {
+      rangeArray.push(x - 1);
+      return range(x - 2, y, true, rangeArray)
+    }
+    rangeArray.push(x)
+    return range(x - 1, y, true, rangeArray)
   }
 
   if (x < y) {
-      let lastValue = x + 1;
-      if (rangeArray.length) lastValue = rangeArray[rangeArray.length - 1] + 1;
-      if (lastValue === y){
-        return rangeArray
-      }
-      rangeArray.push(lastValue);
-      return range(x, y, rangeArray)
-  
+    if (!isRecursive) {
+      rangeArray.push(x + 1);
+      return range(x + 2, y, true, rangeArray)
+    }
+    rangeArray.push(x)
+    return range(x + 1, y, true, rangeArray)
+
   }
   return rangeArray
 }
@@ -136,30 +130,39 @@ var range = function (x, y, rangeArray = []) {
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function (base, exp, output = 1) {
   //base case
-  if(exp === 0){
-    return 1
-  }
-  //recursion 
-
-  if (exp === 1){
-  output = base
-  return output 
+  if (exp === 0) {
+    return output
+  
   }
 
-  if(exp > 1){
-    output *= base 
-  return exponent(base, exp-1, output)
+  if (exp > 0) {
+    output *= base
+    return exponent(base, exp - 1, output)
+  }
+
+  if (exp < 0) {
+    output /= base;
+    return exponent(base, exp + 1, output)
+  }
 }
-  if (exp < 1)
-  output *= base ;
-}
-//4*4
+//4*
 
 // 8. Determine if a number is a power of two.
 // powerOfTwo(1); // true
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function (n) {
+  if (n === 1 || n === 2){
+    return true 
+  }
+  if (n < 2){
+    return false
+  }
+  if (n > 2){
+    n /= 2
+   
+  } 
+  return powerOfTwo(n)
 };
 
 // 9. Write a function that accepts a string and reverses it.
