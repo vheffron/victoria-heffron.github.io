@@ -221,7 +221,7 @@ var gcd = function (x, y) {
 // compareStr('tomato', 'tomato') // true
 var compareStr = function (str1, str2, output = true) {
 
-  if (str1.length = 0) {
+  if (str1.length === 0) {
     return output
   }
 
@@ -235,7 +235,11 @@ var compareStr = function (str1, str2, output = true) {
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
-var createArray = function (str) {
+var createArray = function (str, strArray = []) {
+  if (str.length === 0){
+    return strArray
+  } strArray.push(str[0])
+  return createArray(str.slice(1), strArray)
 };
 
 // 17. Reverse the order of an array
