@@ -105,7 +105,7 @@ var range = function (x, y, rangeArray = []) {
   }
 
   if (x > y) {
-    rangeArray.push(x -1);
+    rangeArray.push(x - 1);
     return range(x - 1, y, rangeArray)
   }
   return rangeArray
@@ -120,7 +120,7 @@ var exponent = function (base, exp, output = 1) {
   //base case
   if (exp === 0) {
     return output
-  
+
   }
 
   if (exp > 0) {
@@ -140,40 +140,40 @@ var exponent = function (base, exp, output = 1) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function (n) {
-  if (n === 1 || n === 2){
-    return true 
+  if (n === 1 || n === 2) {
+    return true
   }
-  if (n < 2){
+  if (n < 2) {
     return false
   }
-  if (n > 2){
+  if (n > 2) {
     n /= 2
-   
-  } 
+
+  }
   return powerOfTwo(n)
 };
 
 // 9. Write a function that accepts a string and reverses it.
 var reverse = function (string, newString = '') {
-  if (string.length === 0){
-    return newString; 
+  if (string.length === 0) {
+    return newString;
   }
   return reverse(string.substr(1)) + string.charAt(0)
-  
+
 };
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function (string) {
   string = string.replace(/[^a-z0-9]/i, '').toLowerCase();
-  if (string.length <= 1){
-  return true
+  if (string.length <= 1) {
+    return true
   }
-  if (string[0] !== string[string.length - 1]){ 
+  if (string[0] !== string[string.length - 1]) {
     return false
   }
   return palindrome(string.slice(1, -1))
-  }
-  
+}
+
 
 // 11. Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
@@ -186,12 +186,20 @@ var modulo = function (x, y) {
 // 12. Write a function that multiplies two numbers without using the * operator  or
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
-var multiply = function (x, y) {
+var multiply = function (x, y, output = 0) {
   if (y === 0) {
-    return 0
+    return output
   }
+  if (y > 0){
+    output += x;
+    return multiply(x, y - 1, output)
+  }
+  if (y < 0){
+    output -= x;
+    return multiply(x, y + 1, output)
 };
-multiply(2, 4) // multiplying is equivalent to adding x to itself y times. 2 + 2 + 2 + 2  
+}
+console.log(multiply(4, 5))
 
 // 13. Write a function that divides two numbers without using the / operator  or
 // JavaScript's Math object.
@@ -211,7 +219,18 @@ var gcd = function (x, y) {
 // compareStr('house', 'houses') // false
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
-var compareStr = function (str1, str2) {
+var compareStr = function (str1, str2, output = true) {
+
+  if (str1.length = 0) {
+    return output
+  }
+
+  if (str1[0] !== str2[0]) {
+    return false
+  }
+
+  return compareStr(str1.slice(1), str2.slice(1), true)
+
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
