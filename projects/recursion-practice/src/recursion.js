@@ -87,37 +87,40 @@ var sumBelow = function (n, isRecursive = false) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function (x, y, isRecursive = false, rangeArray = []) {
+var range = function (x, y, rangeArray = []) {
 
   //base case
+
   if (x === y){
     return rangeArray
   }
-    if (x + 1 === y || x - 1 === y) {
-      return rangeArray
-    }
+  if (x + 1 === y || x - 1 === y) {
+    return rangeArray
+  }
+
 
   //recursion
   if (x > y) {
-    if (!isRecursive) {
-      rangeArray.push(x - 1);
-      return range(x - 2, y, true, rangeArray)
-    }
-    rangeArray.push(x)
-    return range(x - 1, y, true, rangeArray)
+      let lastValue = x - 1
+      if (rangeArray.length){
+        lastValue = rangeArray[rangeArray.length - 1] - 1
+      }
+      if (lastValue === y){ 
+        return rangeArray
+      }
+      rangeArray.push(lastValue);
+      return range(x, y, rangeArray)
   }
 
-  //recursion 
-  //x - 1?
-
   if (x < y) {
-    if (!isRecursive) {
-      rangeArray.push(x + 1);
-      return range(x + 2, y, true, rangeArray)
-    }
-    rangeArray.push(x)
-    return range(x + 1, y, true, rangeArray)
-
+      let lastValue = x + 1;
+      if (rangeArray.length) lastValue = rangeArray[rangeArray.length - 1] + 1;
+      if (lastValue === y){
+        return rangeArray
+      }
+      rangeArray.push(lastValue);
+      return range(x, y, rangeArray)
+  
   }
   return rangeArray
 }
@@ -131,8 +134,26 @@ var range = function (x, y, isRecursive = false, rangeArray = []) {
 // 8^2 = 8 x 8 = 64.  Here, 8 is the base and 2 is the exponent.
 // Example:  exponent(4,3);  // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
-var exponent = function (base, exp) {
-};
+var exponent = function (base, exp, output = 1) {
+  //base case
+  if(exp === 0){
+    return 1
+  }
+  //recursion 
+
+  if (exp === 1){
+  output = base
+  return output 
+  }
+
+  if(exp > 1){
+    output *= base 
+  return exponent(base, exp-1, output)
+}
+  if (exp < 1)
+  output *= base ;
+}
+//4*4
 
 // 8. Determine if a number is a power of two.
 // powerOfTwo(1); // true
