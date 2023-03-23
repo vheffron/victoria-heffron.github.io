@@ -221,13 +221,9 @@ var gcd = function (x, y) {
 // compareStr('tomato', 'tomato') // true
 var compareStr = function (str1, str2, output = true) {
 
-  if (str1.length === 0) {
-    return output
-  }
+  if (str1.length === 0 && str2.length === 0) return output;
 
-  if (str1[0] !== str2[0]) {
-    return false
-  }
+  if (str1[0] !== str2[0]) return false;
 
   return compareStr(str1.slice(1), str2.slice(1), true)
 
@@ -276,10 +272,9 @@ var countOccurrence = function (array, value, counter = 0) {
 var rMap = function (array, callback, mapArray = []) {
   if (array.length === 0){
     return mapArray
-  } callback(array[0])
-  return rMap (array.slice(1), callback)
-
-
+  } 
+  mapArray.push(callback(array[0]))
+  return rMap (array.slice(1), callback, mapArray)
 };
 
 // 21. Write a function that counts the number of times a key occurs in an object.
@@ -315,12 +310,20 @@ var fibonacci = function (n) {
 // nthFibo(7); // 13
 // nthFibo(3); // 2
 var nthFibo = function (n) {
+  if(n < 0) return null
+  if(n < 2) return n 
+  return nthFibo(n-1) + nthFibo (n-2)
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-var capitalizeWords = function (input) {
+var capitalizeWords = function (input, newArray = []) {
+  if (input.length === 0) return newArray
+  newArray.push(input[0].toUpperCase())
+  return capitalizeWords(input.slice(1), newArray)
+
+
 };
 
 // 27. Given an array of strings, capitalize the first letter of each index.
