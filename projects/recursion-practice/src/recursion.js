@@ -328,7 +328,10 @@ var capitalizeWords = function (input, newArray = []) {
 
 // 27. Given an array of strings, capitalize the first letter of each index.
 // capitalizeFirst(['car', 'poop', 'banana']); // ['Car', 'Poop', 'Banana']
-var capitalizeFirst = function (array) {
+var capitalizeFirst = function (array, newArray = []) {
+  if (array.length === 0) return newArray
+  newArray.push(array[0][0].toUpperCase())
+  return capitalizeFirst(array.slice(1), newArray)
 };
 
 // 28. Return the sum of all even numbers in an object containing nested objects.
