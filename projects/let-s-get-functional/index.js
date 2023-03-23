@@ -96,7 +96,7 @@ var averageBalance = function (array) {
 var firstLetterCount = function (array, letter) {
     let firstLetterArray = _.filter(array, function (customer) {
         return customer.name[0].toUpperCase() === letter.toUpperCase();
-    }); 
+    });
     return firstLetterArray.length
 
 }
@@ -109,37 +109,63 @@ var firstLetterCount = function (array, letter) {
 var friendFirstLetterCount = function (array, customerName, letter) {
 
     let customer = _.filter(array, function (c) {
-        return c.name === customerName})[0]; 
+        return c.name === customerName
+    })[0];
 
 
-  return firstLetterCount(customer.friends, letter)
+    return firstLetterCount(customer.friends, letter)
 }
 
 
 var friendsCount = function (array, name) { //output array of followers names 
-    var nameFollowers = _.filter(array, function(customer){
-        return _.some(customer.friends, function(friend){
+    var nameFollowers = _.filter(array, function (customer) {
+        return _.some(customer.friends, function (friend) {
             return friend.name === name
         })
     })
-  return _.map(nameFollowers, function(nameFollower){
-    return nameFollower.name
-  })
-        
+    return _.map(nameFollowers, function (nameFollower) {
+        return nameFollower.name
+    })
+
 }
 
-const friendsCount2 = (array, name) => 
+const friendsCount2 = (array, name) =>
     array
         .filter((c) => c.friends.some(f => f.name === name))
         .map((n => n.name));
 
 
-var topThreeTags = function () {
+var topThreeTags = function (array) {
+    var hist = _.reduce(array, function (hist, customer) {
+        //loop through customers tags 
+        for (var i = 0; i < customer.tags.length; i++) {
+            let tag = customer.tags[i]
+            //if tag is new, initialize 
+            if (hist[tag] === undefined) hist[tag] = 0
+            //count how many times tag is seen 
+            hist[tag]++
+        }
+        return hist
+    }, {})
+    var topThreeArray = []
+    for (var key in hist) {
+        if (hist[key] === 3) {
+            topThreeArray.push(key)
+        }
+    } return topThreeArray
+}
 
-};
+var genderCount = function (array) {
+    var hist = _.reduce(array, function (hist, customer) {
+        let gender = customer.gender
+        //if gender is new, initialize 
+        if (hist[gender] === undefined) hist[gender] = 0
+        //count how many times gender is seen 
+        hist[gender]++
 
-var genderCount = function () {
-
+        return hist;
+    }, {})
+    return hist;
 };
 
 //////////////////////////////////////////////////////////////////////
