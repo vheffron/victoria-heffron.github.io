@@ -376,7 +376,7 @@ var compress = function (list, newArray = []) {
   if (list.length === 0) return newArray
 
   //if item does not equal last item in new array, add it to the array 
-  if (list[0] !== newArray[newArray.length - 1] ) newArray.push(list[0])
+  if (list[0] !== newArray[newArray.length - 1]) newArray.push(list[0])
 
 
   return compress(list.slice(1), newArray)
@@ -405,21 +405,49 @@ var minimizeZeroes = function (array, newArray = []) {
 // their original sign.  The first number in the index always needs to be positive.
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
-var alternateSign = function (array, newArray = []) {
-  if (array.length === 0)
-};
+var alternateSign = function (array, newArray = [], n = 1) {
+  if (array.length === 0) return newArray
 
+  if (array[0] < 0) {
+    newArray.push(array[0] * -n)
+    return alternateSign(array.slice(1), newArray, n * -1)
+  }
+
+  if (array[0] > 0) {
+    newArray.push(array[0] * n)
+    return alternateSign(array.slice(1), newArray, n * -1)
+
+  }
+}
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
-var numToText = function (str) {
+var numToText = function (str, newString = '') {
+
+  if (str.length === 0) return newString
+
+  if (str[0] === 0) newString +='zero'
+  if (str[0] === 1) newString +='one'
+  if (str[0] === 2) newString +='two'
+  if (str[0] === 3) newString +='three'
+  if (str[0] === 4) newString +='four'
+  if (str[0] === 5) newString +='five'
+  if (str[0] === 6) newString +='six'
+  if (str[0] === 7) newString +='seven'
+  if (str[0] === 8) newString +='eight'
+  if (str[0] === 9) newString +='nine'
+  else {
+    newString += str[0]
+  }
+  return numToText(str.slice(1), newString)
+
 };
 
 // *** EXTRA CREDIT ***
 
 // 36. Return the number of times a tag occurs in the DOM.
 var tagCount = function (tag, node) {
-};
+}
 
 // 37. Write a function for binary search.
 // Sample array:  [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
