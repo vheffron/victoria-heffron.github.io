@@ -426,19 +426,19 @@ var numToText = function (str, newString = '') {
 
   if (str.length === 0) return newString
 
-  if (str[0] === 0) newString +='zero'
-  if (str[0] === 1) newString +='one'
-  if (str[0] === 2) newString +='two'
-  if (str[0] === 3) newString +='three'
-  if (str[0] === 4) newString +='four'
-  if (str[0] === 5) newString +='five'
-  if (str[0] === 6) newString +='six'
-  if (str[0] === 7) newString +='seven'
-  if (str[0] === 8) newString +='eight'
-  if (str[0] === 9) newString +='nine'
-  else {
-    newString += str[0]
-  }
+  if (str[0] === '0') newString +='zero'
+  if (str[0] === '1') newString +='one'
+  if (str[0] === '2') newString +='two'
+  if (str[0] === '3') newString +='three'
+  if (str[0] === '4') newString +='four'
+  if (str[0] === '5') newString +='five'
+  if (str[0] === '6') newString +='six'
+  if (str[0] === '7') newString +='seven'
+  if (str[0] === '8') newString +='eight'
+  if (str[0] === '9') newString +='nine'
+  if (str[0] !== '0' && str[0] !== '1' && str[0] !== '2' && str[0] !== '3' && str[0] !== '4' && str[0] !== '5' && str[0] !== '6' && str[0] !== '7' & str[0] !== '8' && str[0] !== '9') newString += str[0]
+  
+  
   return numToText(str.slice(1), newString)
 
 };
