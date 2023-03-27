@@ -60,7 +60,11 @@ return newArray
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArrayInPlace() {
+function reverseArrayInPlace(array, n = array.length) {
+if (n === 0) return array
+
+array.unshift(array.pop())
+return reverseArrayInPlace(array, n - 1)
 
 }
 
@@ -68,7 +72,15 @@ function reverseArrayInPlace() {
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function arrayToList() {
+function arrayToList(array) {
+ let rest = null;
+
+ for (let i = array.length - 1; i >= 0; i--){
+  rest = {value: array[i], rest: rest};
+ }
+ return rest 
+
+
 
 }
 
@@ -76,8 +88,13 @@ function arrayToList() {
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray() {
-
+function listToArray(list, array = []) {
+if (list.rest === null){
+  array.push(list.value)
+  return array;
+}
+array.push(list.value);
+return listToArray(list.rest, array)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
