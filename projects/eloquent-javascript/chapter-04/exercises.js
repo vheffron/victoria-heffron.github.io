@@ -5,14 +5,14 @@
 function range(start, end, step = 1, rangeArray = []) {
 
   //base case
-  
+
   if (step < 0 && start < end) return rangeArray
 
-  if (start === end)  {
+  if (start === end) {
     if (rangeArray.length === 0) return rangeArray
     rangeArray.push(end)
     return rangeArray
-    
+
   }
 
 
@@ -23,10 +23,10 @@ function range(start, end, step = 1, rangeArray = []) {
 
   //recursion
   if (start > end) {
-    rangeArray.push(start )
+    rangeArray.push(start)
     return range(start - step, end, step, rangeArray)
   }
-  
+
 }
 
 
@@ -38,10 +38,10 @@ function range(start, end, step = 1, rangeArray = []) {
 
 function sum(array) {
   var sumOfArray = 0
-if (array === []) return 0
-for (var i = 0; i < array.length; i++){
-  sumOfArray += array[i]
-} return sumOfArray
+  if (array === []) return 0
+  for (var i = 0; i < array.length; i++) {
+    sumOfArray += array[i]
+  } return sumOfArray
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -50,35 +50,36 @@ for (var i = 0; i < array.length; i++){
 
 function reverseArray(array, newArray = []) {
   if (array.length === 0) return newArray
-  for (var i = array.length - 1; i >= 0; i--){
+  for (var i = array.length - 1; i >= 0; i--) {
     newArray.push(array[i])
   }
-return newArray
+  return newArray
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
-function reverseArrayInPlace(array, n = array.length) {
-if (n === 0) return array
-
-array.unshift(array.pop())
-return reverseArrayInPlace(array, n - 1)
-
+function reverseArrayInPlace(array) {
+  for (let i = 0; i < Math.floor(array.length/2); i++) {
+    let origSpot = array[i];
+    array[i] = array[array.length-i-1];
+    array[array.length-i-1] = origSpot;
+  }
+  return array;
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 function arrayToList(array) {
- let rest = null;
+  let rest = null;
 
- for (let i = array.length - 1; i >= 0; i--){
-  rest = {value: array[i], rest: rest};
- }
- return rest 
+  for (let i = array.length - 1; i >= 0; i--) {
+    rest = { value: array[i], rest: rest };
+  }
+  return rest
 
 
 
@@ -89,27 +90,34 @@ function arrayToList(array) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function listToArray(list, array = []) {
-if (list.rest === null){
-  array.push(list.value)
-  return array;
-}
-array.push(list.value);
-return listToArray(list.rest, array)
+  if (list.rest === null) {
+    array.push(list.value)
+    return array;
+  }
+  array.push(list.value);
+  return listToArray(list.rest, array)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function prepend() {
-
+function prepend(value, list) {
+  return {
+    value: value,
+    rest: list
+  }
 }
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // nth /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function nth() {
+function nth(list, number) {
+  return listToArray(list)[number];
 
 }
 
@@ -117,23 +125,23 @@ function nth() {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual(x , y) {
-  if (typeof x !== 'object' && typeof y !== 'object'){
+function deepEqual(x, y) {
+  if (typeof x !== 'object' && typeof y !== 'object') {
     return x === y;
   }
-  if (typeof x !== 'object' || typeof y !== 'object'){
+  if (typeof x !== 'object' || typeof y !== 'object') {
     return false;
   }
   let xKeys = Object.keys(x);
   let yKeys = Object.keys(y);
-  if (xKeys.length !== yKeys.length){
+  if (xKeys.length !== yKeys.length) {
     return false;
   }
-  for (let i = 0; i < xKeys.length; i++){
-    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])){
+  for (let i = 0; i < xKeys.length; i++) {
+    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])) {
       return false;
     }
-  } return true 
+  } return true
 }
 
 ////////////////////////////////////////////////////////////////////////////////
