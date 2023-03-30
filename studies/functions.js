@@ -60,8 +60,9 @@ var addValueToArray = function(value, array){ //this function takes two inputs, 
 //6//Scope 
 let value = 5 //this variable is globally scoped and is therefore available in the function below 
 
-function subtractValue(number)
-let result = number - value //the value of 5, as defined above, is available within this function
+function subtractValue(number) {
+    let result = number - value //the value of 5, as defined above, is available within this function
+}
 //however, the new variable 'result' that we have defined inside of this function, is not available outside of this function
 
 //7//Closures 
