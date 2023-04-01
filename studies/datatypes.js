@@ -80,15 +80,33 @@
  checkLetters(a, b)//calls the function, returns 'These letters are different'
   
  //7// undefined
+ var x 
+ console.log(x) //will print undefined, because var x has not been assigned to a value
   
  //8// null 
+ var x = null //null is a literal that can be assigned to a variable
   
  //9// NaN
+ isNaN('hello') // returns true 
   
  //10// Infinity and -Infinity 
+ 100/-0 //returns -Infinity
+ 100/0 //returns Infinity 
   
  //11// Primitive/Complex
+ var a = 5 //this is a primitive datatype
+ var object = {a: 1, b: 2} //this is a complex datatype
   
  //12// Copy by Value/Copy by Reference 
+ //copy by value
+ var a = 7
+ var b = a //the value of a is copied to b, so b now also equals 7
+ var b = 2 //b can be redefined without changing the value of a 
+
+//copy by reference 
+var a = [1, 2, 3, 4]
+var b = a //var b now points to the same object that a points to 
+b.push(5) //this changes the array that both a and b point to 
+console.log(a) //prints [1, 2, 3, 4, 5] because the array that b points to is the same one that a points to  
  
 
