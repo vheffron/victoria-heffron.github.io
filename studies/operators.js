@@ -1,7 +1,7 @@
 /**
  * OPERATORS
  * 
- * 0: 
+ * 0: Operators are symbols that perform actions on values and variables. 
  * 
  * 
  * 1: Assignment operators: 
