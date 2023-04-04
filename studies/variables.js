@@ -47,10 +47,16 @@ function fullName(){
 
 function fullNameTwo(){
     let firstNameTwo = 'Steve' //let is block scoped and function scoped, so we can only use this variable within this function
-    const lastNameTwo = 'Price' //additionally, we cannot name our variables here firstName and lastName, because we've already declared those globally above 
+    const lastNameTwo = 'Price' 
     console.log(firstNameTwo + ' ' + lastNameTwo)
 }
 //we cannot access firstNameTwo and lastNameTwo in another function, because they are function scoped inside of fullNameTwo
+
+if (a > 3){
+    let string = 'block scoped';
+  }
+
+  console.log(string) //prints error because let is block scoped an therefore is not available outside of the if statement 
 
 //3// Hoisting 
 console.log(varMessage)

@@ -24,11 +24,11 @@
  * 
  * string.toLowerCase(): converts all characters in a string to uppercase 
  * 
- * string.includes(value): checks whether a certain value is contained within a string 
+ * string.includes(value): checks whether a certain value is contained within a string; is case-sensitive 
  * 
- * string.startsWith(value): checks whether a string starts with a certain value 
+ * string.startsWith(value): checks whether a string starts with a certain value; is case-sensitive 
  * 
- * string.endsWith(): checks whether a string ends with a certain value
+ * string.endsWith(): checks whether a string ends with a certain value; is case-sensitive 
  * 
  * string.slice(start,end): extracts a copy of a portion of a string. The start value is the index of the first character to include in the new string.
  *      The optional end value is the first index of the original string to exclude from the new string. The end value is optional; if it is not included 
@@ -54,24 +54,30 @@ stringA += stringB //reassigns stringA to 'GoodMorning'
 stringA < stringB //true; 'Good' comes earlier than 'Morning' in alphabetical order
 
 // >
-stringA > stringB //false; 'Good' does not come latr in the alphabet that 'Morning'
+stringA > stringB //false; 'Good' does not come later in the alphabet that 'Morning'
+
 
 //2// With string methods
+let stringC = 'Good'
+let stringD = 'MorninG'
+let stringE = 'AdriaN'
 
 // .length 
+console.log(stringC.length) //prints 4, the length of 'Good'
 
 // by index
-    //   .length-1
+console.log(stringC[0]) //prints 'G', the character at the 0 index of stringC
+    //.length-1
+    console.log(stringC[stringC.length - 1]) // prints 'd', the last character of stringC
   
 // toUpperCase()
+console.log(stringC.toUpperCase()) //prints GOOD
  
 // toLowerCase ()
+console.log(stringD.toLowerCase()) //prints morning 
  
 // includes()
-  
-// startsWith()
-  
-// endsWith()
+stringE.includes('A') //returns true 
   
 // .slice()
  

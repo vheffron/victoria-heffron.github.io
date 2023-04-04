@@ -25,7 +25,7 @@ if (hour > 3 && hour < 12){ //if the hour passed into hour function is greater t
     console.log ('Good morning ' + name + '!')
 } //if that condition isn't met, then we proceed to a new condition:
 //2// Else-if (code continues from above)
-if (hour >= 12 && hour <= 4){ //if the hour is between noon and 4, then we print an afternoon greeting
+else if (hour >= 12 && hour <= 4){ //if the hour is between noon and 4, then we print an afternoon greeting
     console.log ('Good afternoon ' + name + '!')
 }
 //3// Else (code continues from above)

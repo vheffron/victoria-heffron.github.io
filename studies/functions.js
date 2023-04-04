@@ -38,10 +38,12 @@
 function addFive(number){ //a basic function declaration for a function called addFive that takes one argument
     return number + 5 //the body of the function is what the function does, in this case it adds five to the passed in number
 } 
+    //Function invocation 
+    addFive(3) //returns 8
 
 //2// Parameters vs. arguments
-function addFive(number) //number is a parameter
-addFive(5) //5 is an argument
+function addFive(number) //number is a parameter used during function declaration 
+addFive(5) //5 is an argumentu sed during function invocation 
 
 //3//Named function syntax
 function addFive(number){
